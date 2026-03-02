@@ -1,0 +1,15 @@
+C:\c_sharp\primeiro_console_proejto\primeiro_console_proejto\bin\Debug\net10.0\primeiro_console_proejto.exe
+C:\c_sharp\primeiro_console_proejto\primeiro_console_proejto\bin\Debug\net10.0\primeiro_console_proejto.deps.json
+C:\c_sharp\primeiro_console_proejto\primeiro_console_proejto\bin\Debug\net10.0\primeiro_console_proejto.runtimeconfig.json
+C:\c_sharp\primeiro_console_proejto\primeiro_console_proejto\bin\Debug\net10.0\primeiro_console_proejto.dll
+C:\c_sharp\primeiro_console_proejto\primeiro_console_proejto\bin\Debug\net10.0\primeiro_console_proejto.pdb
+C:\c_sharp\primeiro_console_proejto\primeiro_console_proejto\obj\Debug\net10.0\primeiro_console_proejto.GeneratedMSBuildEditorConfig.editorconfig
+C:\c_sharp\primeiro_console_proejto\primeiro_console_proejto\obj\Debug\net10.0\primeiro_console_proejto.AssemblyInfoInputs.cache
+C:\c_sharp\primeiro_console_proejto\primeiro_console_proejto\obj\Debug\net10.0\primeiro_console_proejto.AssemblyInfo.cs
+C:\c_sharp\primeiro_console_proejto\primeiro_console_proejto\obj\Debug\net10.0\primeiro_console_proejto.csproj.CoreCompileInputs.cache
+C:\c_sharp\primeiro_console_proejto\primeiro_console_proejto\obj\Debug\net10.0\primeiro_console_proejto.sourcelink.json
+C:\c_sharp\primeiro_console_proejto\primeiro_console_proejto\obj\Debug\net10.0\primeiro_console_proejto.dll
+C:\c_sharp\primeiro_console_proejto\primeiro_console_proejto\obj\Debug\net10.0\refint\primeiro_console_proejto.dll
+C:\c_sharp\primeiro_console_proejto\primeiro_console_proejto\obj\Debug\net10.0\primeiro_console_proejto.pdb
+C:\c_sharp\primeiro_console_proejto\primeiro_console_proejto\obj\Debug\net10.0\primeiro_console_proejto.genruntimeconfig.cache
+C:\c_sharp\primeiro_console_proejto\primeiro_console_proejto\obj\Debug\net10.0\ref\primeiro_console_proejto.dll
