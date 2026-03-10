@@ -1,0 +1,15 @@
+C:\c_sharp\list_dict\list_dict\bin\Debug\net10.0\list_dict.exe
+C:\c_sharp\list_dict\list_dict\bin\Debug\net10.0\list_dict.deps.json
+C:\c_sharp\list_dict\list_dict\bin\Debug\net10.0\list_dict.runtimeconfig.json
+C:\c_sharp\list_dict\list_dict\bin\Debug\net10.0\list_dict.dll
+C:\c_sharp\list_dict\list_dict\bin\Debug\net10.0\list_dict.pdb
+C:\c_sharp\list_dict\list_dict\obj\Debug\net10.0\list_dict.GeneratedMSBuildEditorConfig.editorconfig
+C:\c_sharp\list_dict\list_dict\obj\Debug\net10.0\list_dict.AssemblyInfoInputs.cache
+C:\c_sharp\list_dict\list_dict\obj\Debug\net10.0\list_dict.AssemblyInfo.cs
+C:\c_sharp\list_dict\list_dict\obj\Debug\net10.0\list_dict.csproj.CoreCompileInputs.cache
+C:\c_sharp\list_dict\list_dict\obj\Debug\net10.0\list_dict.sourcelink.json
+C:\c_sharp\list_dict\list_dict\obj\Debug\net10.0\list_dict.dll
+C:\c_sharp\list_dict\list_dict\obj\Debug\net10.0\refint\list_dict.dll
+C:\c_sharp\list_dict\list_dict\obj\Debug\net10.0\list_dict.pdb
+C:\c_sharp\list_dict\list_dict\obj\Debug\net10.0\list_dict.genruntimeconfig.cache
+C:\c_sharp\list_dict\list_dict\obj\Debug\net10.0\ref\list_dict.dll

@@ -1,0 +1,15 @@
+C:\c_sharp\classes\classes\bin\Debug\net10.0\classes.exe
+C:\c_sharp\classes\classes\bin\Debug\net10.0\classes.deps.json
+C:\c_sharp\classes\classes\bin\Debug\net10.0\classes.runtimeconfig.json
+C:\c_sharp\classes\classes\bin\Debug\net10.0\classes.dll
+C:\c_sharp\classes\classes\bin\Debug\net10.0\classes.pdb
+C:\c_sharp\classes\classes\obj\Debug\net10.0\classes.GeneratedMSBuildEditorConfig.editorconfig
+C:\c_sharp\classes\classes\obj\Debug\net10.0\classes.AssemblyInfoInputs.cache
+C:\c_sharp\classes\classes\obj\Debug\net10.0\classes.AssemblyInfo.cs
+C:\c_sharp\classes\classes\obj\Debug\net10.0\classes.csproj.CoreCompileInputs.cache
+C:\c_sharp\classes\classes\obj\Debug\net10.0\classes.sourcelink.json
+C:\c_sharp\classes\classes\obj\Debug\net10.0\classes.dll
+C:\c_sharp\classes\classes\obj\Debug\net10.0\refint\classes.dll
+C:\c_sharp\classes\classes\obj\Debug\net10.0\classes.pdb
+C:\c_sharp\classes\classes\obj\Debug\net10.0\classes.genruntimeconfig.cache
+C:\c_sharp\classes\classes\obj\Debug\net10.0\ref\classes.dll
