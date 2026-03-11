@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\c_sharp\\TestProject1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9079CEE5-CC6C-4F0C-99E3-22E4D2CFB742}|TestProject1\\TestProject1.fsproj|c:\\c_sharp\\testproject1\\testproject1\\apptest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9079CEE5-CC6C-4F0C-99E3-22E4D2CFB742}|TestProject1\\TestProject1.fsproj|solutionrelative:testproject1\\apptest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9079CEE5-CC6C-4F0C-99E3-22E4D2CFB742}|TestProject1\\TestProject1.fsproj|c:\\c_sharp\\testproject1\\testproject1\\tests.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{9079CEE5-CC6C-4F0C-99E3-22E4D2CFB742}|TestProject1\\TestProject1.fsproj|solutionrelative:testproject1\\tests.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appTest.cs",
+              "DocumentMoniker": "C:\\c_sharp\\TestProject1\\TestProject1\\appTest.cs",
+              "RelativeDocumentMoniker": "TestProject1\\appTest.cs",
+              "ToolTip": "C:\\c_sharp\\TestProject1\\TestProject1\\appTest.cs",
+              "RelativeToolTip": "TestProject1\\appTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T12:54:22.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Tests.fs",
+              "DocumentMoniker": "C:\\c_sharp\\TestProject1\\TestProject1\\Tests.fs",
+              "RelativeDocumentMoniker": "TestProject1\\Tests.fs",
+              "ToolTip": "C:\\c_sharp\\TestProject1\\TestProject1\\Tests.fs",
+              "RelativeToolTip": "TestProject1\\Tests.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-10T12:49:01.7Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
