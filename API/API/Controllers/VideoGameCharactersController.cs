@@ -1,7 +1,11 @@
-﻿using API.Models;
+﻿
+// controller
+using API.Models;
+
 using API.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using API.Dtos;
 
 namespace API.Controllers
 {
@@ -11,11 +15,11 @@ namespace API.Controllers
     {
 
         [HttpGet]
-        public async Task<ActionResult<List<Character>>> GetCharacter()
+        public async Task<ActionResult<List<CharacterResponse>>> GetCharacter()
             => Ok(await service.GetAllCharactersAsync());
 
         [HttpGet("^{id}")]
-        public async Task<ActionResult<Character>> GetCharacter(int id)
+        public async Task<ActionResult<CharacterResponse>> GetCharacter(int id)
         {
             var character = await service.GetCharacterByIdAsync(id);
 
