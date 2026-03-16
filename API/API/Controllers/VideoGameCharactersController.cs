@@ -18,7 +18,7 @@ namespace API.Controllers
         public async Task<ActionResult<List<CharacterResponse>>> GetCharacter()
             => Ok(await service.GetAllCharactersAsync());
 
-        [HttpGet("^{id}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<CharacterResponse>> GetCharacter(int id)
         {
             var character = await service.GetCharacterByIdAsync(id);
@@ -29,6 +29,27 @@ namespace API.Controllers
             //    return NotFound("Character with the given Id was not found.");
             //}
             //return Ok(character);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<CharacterResponse>> AddCharacter(CreateCharacterRequest character)
+        {
+            var createCharacter = await service.AddCharacterByIdAsync(character);
+            return CreatedAtAction(nameof(GetCharacter), new { id = createCharacter.Id }, createCharacter);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UptadeCharacter(int id, UptadeCharacterRequest character)
+        {
+            var uptade = await service.UpdateCharacterAsync(id, character);
+            return uptade ? NoContent() : NotFound("Character with the given id was not found");
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteCharacter(int id)
+        {
+            var deleted = await service.DeleteCharacterAsync(id);
+            return deleted ? NoContent() : NotFound("Character with the given id was not found");
         }
     }
 }

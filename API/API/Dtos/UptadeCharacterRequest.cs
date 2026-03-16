@@ -1,7 +1,6 @@
-
 namespace API.Dtos;
 
-public class CharacterResponse
+public class UptadeCharacterRequest
 {
     public int Id { get; set; }
 

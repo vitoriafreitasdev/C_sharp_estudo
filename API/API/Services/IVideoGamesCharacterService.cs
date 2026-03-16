@@ -8,8 +8,8 @@ namespace API.Services
     {
         Task<List<CharacterResponse>> GetAllCharactersAsync();
         Task<CharacterResponse?> GetCharacterByIdAsync(int id);
-        Task<CharacterResponse> AddCharacterByIdAsync(Character character);
-        Task<bool> UpdateCharacterAsync(int id, Character character);
+        Task<CharacterResponse> AddCharacterByIdAsync(CreateCharacterRequest character);
+        Task<bool> UpdateCharacterAsync(int id, UptadeCharacterRequest character);
         Task<bool> DeleteCharacterAsync(int id);
 
     }
