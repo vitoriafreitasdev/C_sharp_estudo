@@ -1,7 +1,8 @@
-﻿namespace API_PIMV.Models
+﻿namespace API_PIMV.Dtos
 {
-    public class Users
+    public class UsersGetResponse
     {
+
         public int UserId { get; set; }
 
         public string Name { get; set; }
@@ -10,6 +11,5 @@
 
         public string Email { get; set; }
 
-        public string Password { get; set; }
     }
 }

@@ -7,21 +7,38 @@ estrutura
 tabelas: 
 usuarios e eventos
 
-controllers que precisam ter:
+controller do usuário precisa ter:
 
-cadastro
-login
-inscrição ao eventos registrados
+	pegar todos usuarios
 
-usuario que registrou um evento pode:
+	pegar usuario pelo id
 
-edita-lo e deleta-lo
+	cadastro
 
-usuarios podem curtir e comentar em eventos postados
+	login
 
-emissão de certificado 
+controller do evento precisa ter:
 
-chat para comunicação entre usuários 
+	pegar todos eventos 
+
+	pegar evento pelo id
+
+	pegar eventos criados por um usuario especifico
+
+	inscrição ao evento
+
+	editar => passar o id do evento e do usuario que criou
+
+	deletar => passar o id do evento e do usuario que criou
+
+	usuarios podem curtir e comentar em eventos postados
+
+	chat para comunicação entre usuários 
+
+	emissão de certificado 
+
+
+	
 
 usuario precisa ter:
 	
@@ -36,5 +53,9 @@ evento precisa ter:
 	id,
 	titulo, 
 	data,
+	descrição,
 	tipo de evento (hackathons, jornadas,  semanas de curso, congressos
 	estudantis, competições de programação e mostras de projetos)
+	keyParaEmissaoDoCertificado,
+	users_inscritos,
+	idDoUsuarioQueCriou

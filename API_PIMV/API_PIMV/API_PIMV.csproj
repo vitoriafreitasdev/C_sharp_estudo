@@ -7,7 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\WebSiteController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.5" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.13.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\c_sharp\API_PIMV\API_PIMV\Controllers\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\c_sharp\API_PIMV\API_PIMV\Controllers\.editorconfig" />
   </ItemGroup>
 
 </Project>

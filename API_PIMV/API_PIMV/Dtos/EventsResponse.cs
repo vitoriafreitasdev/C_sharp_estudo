@@ -1,17 +1,16 @@
-﻿namespace API_PIMV.Models
-{
-    public class Events
-    {
+﻿using API_PIMV.Models;
 
+namespace API_PIMV.Dtos
+{
+    public class EventsResponse
+    {
         public int EventId { get; set; }
 
         public int Title { get; set; }
 
         public string Description { get; set; }
-        
-        public DateTime Date { get; set; }
 
-        public string Key { get; set; }
+        public DateTime Date { get; set; }
 
         public List<Users> RegisteredUsers { get; set; }
 
