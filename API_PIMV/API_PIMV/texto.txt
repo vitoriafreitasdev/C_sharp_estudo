@@ -1,0 +1,40 @@
+
+Site para planejamento, divulgação, realização e acompanhamento de eventos acadêmicos
+em Tecnologia da Informação.
+
+estrutura 
+
+tabelas: 
+usuarios e eventos
+
+controllers que precisam ter:
+
+cadastro
+login
+inscrição ao eventos registrados
+
+usuario que registrou um evento pode:
+
+edita-lo e deleta-lo
+
+usuarios podem curtir e comentar em eventos postados
+
+emissão de certificado 
+
+chat para comunicação entre usuários 
+
+usuario precisa ter:
+	
+	id,
+	nome,
+	email,
+	idade,
+	senha
+
+evento precisa ter:
+
+	id,
+	titulo, 
+	data,
+	tipo de evento (hackathons, jornadas,  semanas de curso, congressos
+	estudantis, competições de programação e mostras de projetos)
