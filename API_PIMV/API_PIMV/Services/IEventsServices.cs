@@ -8,9 +8,9 @@ namespace API_PIMV.Services
 		Task<List<EventsResponse>> GetEvents();
 		Task<EventsResponse?> GetEvent(int eventId);
 		Task<List<GetUserEventResponse>> GetUserEvents(int userId);
-		Task<bool> RegisterToEvent(int eventId, int userId);
 		Task<bool> EditEvent(int eventId, int userId);
 		Task<bool> DeleteEvent(int eventId, int userId);
-		Task<bool> AddComent(int eventId, int userId);
+		Task<CertificateResponse> Certificate(int eventId, int userId);
+		
     }
 }

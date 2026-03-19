@@ -4,7 +4,7 @@ namespace API_PIMV.Dtos
 {
     public class GetUserEventResponse
     {
-        public int EventId { get; set; }
+        public int Id { get; set; }
 
         public int Title { get; set; }
 
@@ -13,8 +13,6 @@ namespace API_PIMV.Dtos
         public DateTime Date { get; set; }
 
         public string Key { get; set; }
-
-        public List<Users> RegisteredUsers { get; set; }
 
         public int User_Id { get; set; }
     }

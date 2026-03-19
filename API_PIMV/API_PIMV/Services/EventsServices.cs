@@ -5,11 +5,11 @@ namespace API_PIMV.Services
 {
     public class EventsServices : IEventsServices
     {
-        public Task<EventsResponse?> GetEvent(int eventId)
+        public Task<List<EventsResponse>> GetEvents()
         {
             throw new NotImplementedException();
         }
-        public Task<List<EventsResponse>> GetEvents()
+        public Task<EventsResponse?> GetEvent(int eventId)
         {
             throw new NotImplementedException();
         }
@@ -17,20 +17,16 @@ namespace API_PIMV.Services
         {
             throw new NotImplementedException();
         }
-        public Task<bool> DeleteEvent(int eventId, int userId)
-        {
-            throw new NotImplementedException();
-        }
         public Task<bool> EditEvent(int eventId, int userId)
         {
             throw new NotImplementedException();
         }
-        public Task<bool> RegisterToEvent(int eventId, int userId)
+        public Task<bool> DeleteEvent(int eventId, int userId)
         {
             throw new NotImplementedException();
         }
-
-        public Task<bool> AddComent(int eventId, int userId)
+        
+        public Task<CertificateResponse> Certificate(int eventId, int userId)
         {
             throw new NotImplementedException();
         }

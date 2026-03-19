@@ -17,6 +17,10 @@ controller do usuário precisa ter:
 
 	login
 
+	usuarios podem curtir e comentar em eventos postados
+
+	chat para comunicação entre usuários 
+
 controller do evento precisa ter:
 
 	pegar todos eventos 
@@ -30,10 +34,6 @@ controller do evento precisa ter:
 	editar => passar o id do evento e do usuario que criou
 
 	deletar => passar o id do evento e do usuario que criou
-
-	usuarios podem curtir e comentar em eventos postados
-
-	chat para comunicação entre usuários 
 
 	emissão de certificado 
 
