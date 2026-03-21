@@ -2,7 +2,7 @@
 using API_PIMV.Data;
 using API_PIMV.Models;
 using API_PIMV.Dtos;
-using Microsoft.AspNetCore.Http.HttpResults;
+using static BCrypt.Net.BCrypt;
 
 namespace API_PIMV.Services
 {
@@ -54,13 +54,43 @@ namespace API_PIMV.Services
                 return null;
             }
         }
-
-        public Task<bool> RegisterUser(UserRegister user)
+        public async Task<UserRegisterResponse> RegisterUser(UsersRegisterRequest user)
         {
-            throw new NotImplementedException();
+                var userExist = await context.Users
+                    .Where(c => c.Email == user.Email)
+                    .FirstOrDefaultAsync();
+
+                    
+                if(userExist != null) throw new Exception("E-mail já existente, coloque outro");
+
+                if(user.Age < 18) throw new Exception("Usuário menor de idade");
+
+                var userPassword = user.Password;
+                var hashPassword = HashPassword(userPassword, 12);
+                var NewUser = new Users
+                {
+                    Name = user.Name,
+                    Age = user.Age,
+                    Email = user.Email,
+                    Password = hashPassword
+
+                };
+
+                context.Users.Add(NewUser);
+                await context.SaveChangesAsync();
+
+                return new UserRegisterResponse
+                {
+                    Id = NewUser.Id,
+                    Name = NewUser.Name,
+                    Age = NewUser.Age,
+                    Email = NewUser.Email,
+                    Password = hashPassword
+                };
+
         }
 
-        public Task<bool> LoginUser(Users user)
+        public Task<UserLoginResponse> LoginUser(Users user)
         {
             throw new NotImplementedException();
         }

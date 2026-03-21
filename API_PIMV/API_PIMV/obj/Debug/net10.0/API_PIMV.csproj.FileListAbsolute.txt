@@ -159,3 +159,4 @@ C:\c_sharp\API_PIMV\API_PIMV\bin\Debug\net10.0\runtimes\win\lib\net9.0\Microsoft
 C:\c_sharp\API_PIMV\API_PIMV\bin\Debug\net10.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\c_sharp\API_PIMV\API_PIMV\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\c_sharp\API_PIMV\API_PIMV\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\c_sharp\API_PIMV\API_PIMV\bin\Debug\net10.0\BCrypt.Net-Next.dll

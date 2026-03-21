@@ -21,6 +21,32 @@
   },
   {
     "ContainingType": "API_PIMV.Controllers.UsersController",
+    "Method": "PostUser",
+    "RelativePath": "api/Users",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "API_PIMV.Dtos.UsersRegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_PIMV.Dtos.UserRegisterResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_PIMV.Controllers.UsersController",
     "Method": "GetUserById",
     "RelativePath": "api/Users/{id}",
     "HttpMethod": "GET",
