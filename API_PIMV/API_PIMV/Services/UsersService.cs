@@ -12,47 +12,37 @@ namespace API_PIMV.Services
         public async Task<List<UsersGetResponse>> GetAllUsers()
         {
 
-            try
+            var users = await context.Users.Select(c => new UsersGetResponse
             {
-                var users = await context.Users.Select(c => new UsersGetResponse
-                {
-                    Id = c.Id,
-                    Name = c.Name,
-                    Age = c.Age,
-                    Email = c.Email
-                }).ToListAsync();
+                Id = c.Id,
+                Name = c.Name,
+                Age = c.Age,
+                Email = c.Email
+            }).ToListAsync();
 
-                return users;
+            if (users == null || users.Count == 0) throw new Exception("Usuários não encontrados");
 
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return [];
-            }
+            return users;
+
+            
         }
         public async Task<UsersGetResponse?> GetUsers(int id)
         {
 
-            try
+            var user = await context.Users
+            .Where(c => c.Id == id)
+            .Select(c => new UsersGetResponse
             {
-                var user = await context.Users
-                .Where(c => c.Id == id)
-                .Select(c => new UsersGetResponse
-                {
-                    Id = c.Id,
-                    Name = c.Name,
-                    Age = c.Age,
-                    Email = c.Email
-                }).FirstOrDefaultAsync();
+                Id = c.Id,
+                Name = c.Name,
+                Age = c.Age,
+                Email = c.Email
+            }).FirstOrDefaultAsync();
 
-                return user;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return null;
-            }
+            if (user == null) throw new Exception("Usuário não encontrado.");
+
+            return user;
+            
         }
         public async Task<UserRegisterResponse> RegisterUser(UsersRegisterRequest user)
         {
@@ -84,26 +74,35 @@ namespace API_PIMV.Services
                     Id = NewUser.Id,
                     Name = NewUser.Name,
                     Age = NewUser.Age,
-                    Email = NewUser.Email,
-                    Password = hashPassword
+                    Email = NewUser.Email
                 };
 
         }
 
-        public Task<UserLoginResponse> LoginUser(Users user)
+        public async Task<UserLoginResponse> LoginUser(UserLoginRequest user)
         {
-            throw new NotImplementedException();
+            var userFind = await context.Users
+                .Where(c => c.Email == user.Email)
+                .FirstAsync();
+
+            if(userFind == null) throw new Exception("E-mail inválido.");
+
+            var passwordIsCorrect = Verify(user.Password, userFind.Password);
+
+            if (passwordIsCorrect == false) throw new Exception("Senha inválida.");
+
+            UserLoginResponse requestReturn = new UserLoginResponse()
+            {
+                Id = userFind.Id,
+                Name = userFind.Name,
+                Email = userFind.Email
+            }; 
+
+            return requestReturn;
+
         }
 
-        public Task<bool> AddComent(int eventId, int userId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> RegisterToEvent(int eventId, int userId)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
 

@@ -12,29 +12,64 @@ namespace API_PIMV.Controllers
     public class UsersController(IUsersServices service) : Controller
     {
         [HttpGet]
-        public async Task<ActionResult<List<UsersGetResponse>>> Getusers() => Ok(await service.GetAllUsers());
+        public async Task<ActionResult<List<UsersGetResponse>>> Getusers()
+        {
+           try
+           {
+               return Ok(await service.GetAllUsers());
+           }
+           catch (Exception ex)
+           {
+                return BadRequest(ex.Message);
+           }
+        }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<UsersGetResponse?>> GetUserById(int id)
         {
-            var user = await service.GetUsers(id);
-
-            if (user != null)
+            try
             {
+                var user = await service.GetUsers(id);
+
                 return Ok(user);
+                
+                
+
             }
-            return NotFound("User not found");
+            catch (Exception ex)
+            {
+                if(ex.Message == "Usuário não encontrado.")
+                {
+                    return NotFound("User não encontrado.");
+                }
+
+                return BadRequest(ex.Message);
+            }
         }
 
-        [HttpPost]
+        [HttpPost("Register")]
         public async Task<ActionResult<UserRegisterResponse>> PostUser(UsersRegisterRequest user)
         {
-            /* Ver porque nao esta retornando o erro */
             try
             {
                 var newUser = await service.RegisterUser(user);
                 return CreatedAtAction(nameof(GetUserById), new { id = newUser.Id }, newUser);
                
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("Login")]
+        public async Task<ActionResult<UserLoginResponse>> Login(UserLoginRequest user)
+        {
+            try
+            {
+                var requestReturn = await service.LoginUser(user);
+                return Ok(requestReturn);
+
             }
             catch (Exception ex)
             {
