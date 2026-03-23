@@ -17,6 +17,8 @@ builder.Services.AddScoped<IEventsServices, EventsServices>();
 
 builder.Services.AddScoped<IUsersServices, UsersService>();
 
+builder.Services.AddScoped<ISiteService, SiteService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

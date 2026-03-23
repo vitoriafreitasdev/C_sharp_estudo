@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "API_PIMV.Controllers.SiteController",
+    "Method": "AddingComments",
+    "RelativePath": "api/Site/addComment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "comment",
+        "Type": "API_PIMV.Models.Comments",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "API_PIMV.Controllers.UsersController",
     "Method": "Getusers",
     "RelativePath": "api/Users",
