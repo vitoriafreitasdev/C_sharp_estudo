@@ -27,7 +27,53 @@ namespace API_PIMV.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("comments")]
+        public async Task<ActionResult<List<Comments>>> ShowingEventComments(int eventId)
+        {
+            try
+            {
+                var requestReturn = await service.ShowComments(eventId);
+
+                return Ok(requestReturn);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+
+        [HttpPost("registerToEvent")]
+        public async Task<ActionResult<bool>> EventRegister(int eventId, int userId)
+        {
+            try
+            {
+                var requestReturn = await service.RegisterToEvent(eventId, userId);
+
+                return Ok(requestReturn);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("registeredUsersInEvent")]
+        public async Task<ActionResult<List<UsersGetResponse>>> getUsersRegisteredInEvent(int eventId)
+        {
+            try
+            {
+                var requestReturn = await service.UsersReginterInTheEvent(eventId);
+
+                return Ok(requestReturn);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
         }
     }

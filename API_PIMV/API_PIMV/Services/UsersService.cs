@@ -83,7 +83,7 @@ namespace API_PIMV.Services
         {
             var userFind = await context.Users
                 .Where(c => c.Email == user.Email)
-                .FirstAsync();
+                .FirstOrDefaultAsync();
 
             if(userFind == null) throw new Exception("E-mail inválido.");
 
