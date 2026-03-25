@@ -1,6 +1,125 @@
 [
   {
     "ContainingType": "API_PIMV.Controllers.EventsController",
+    "Method": "AddingEvent",
+    "RelativePath": "api/Events/AddEvent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventObj",
+        "Type": "API_PIMV.Dtos.AddEventRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_PIMV.Models.Events",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_PIMV.Controllers.EventsController",
+    "Method": "DelEvent",
+    "RelativePath": "api/Events/DeleteEvent",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_PIMV.Controllers.EventsController",
+    "Method": "EventEdit",
+    "RelativePath": "api/Events/EditEvent",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "events",
+        "Type": "API_PIMV.Models.Events",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_PIMV.Models.Events",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_PIMV.Controllers.EventsController",
+    "Method": "CertificateData",
+    "RelativePath": "api/Events/GetCertificateData",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "key",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_PIMV.Classes.Certificate",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_PIMV.Controllers.EventsController",
     "Method": "GetEvent",
     "RelativePath": "api/Events/getEvent/{id}",
     "HttpMethod": "GET",
@@ -80,9 +199,19 @@
     "Order": 0,
     "Parameters": [
       {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
         "Name": "comment",
-        "Type": "API_PIMV.Models.Comments",
-        "IsRequired": true
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [

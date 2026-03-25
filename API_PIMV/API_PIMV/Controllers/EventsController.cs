@@ -1,4 +1,5 @@
-﻿using API_PIMV.Dtos;
+﻿using API_PIMV.Classes;
+using API_PIMV.Dtos;
 using API_PIMV.Models;
 using API_PIMV.Services;
 using Microsoft.AspNetCore.Http;
@@ -54,5 +55,66 @@ namespace API_PIMV.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPost("AddEvent")]
+        public async Task<ActionResult<Events>> AddingEvent(AddEventRequest eventObj)
+        {
+            try
+            {
+                var eventAdd = await service.AddEvent(eventObj);
+
+                return CreatedAtAction(nameof(GetEvent), new { id = eventAdd.Id }, eventAdd);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPut("EditEvent")]
+        public async Task<ActionResult<Events>> EventEdit(Events events)
+        {
+            try
+            {
+                var eventEdit = await service.EditEvent(events);
+
+                return CreatedAtAction(nameof(GetEvent), new { id = eventEdit.Id }, eventEdit);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete("DeleteEvent")]
+        public async Task<ActionResult<bool>> DelEvent(int eventId, int userId)
+        {
+            try
+            {
+                var eventDel = await service.DeleteEvent(eventId, userId);
+
+                return Ok(eventDel);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("GetCertificateData")]
+        public async Task<ActionResult<Certificate>> CertificateData(int eventId, int userId, string key)
+        {
+            try
+            {
+                var certificate = await service.Certificate(eventId, userId, key);
+
+                return Ok(certificate);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }

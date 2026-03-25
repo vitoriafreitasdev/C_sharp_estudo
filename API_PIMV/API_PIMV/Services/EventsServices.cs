@@ -1,4 +1,5 @@
-﻿using API_PIMV.Data;
+﻿using API_PIMV.Classes;
+using API_PIMV.Data;
 using API_PIMV.Dtos;
 using API_PIMV.Models;
 using Microsoft.EntityFrameworkCore;
@@ -71,23 +72,89 @@ namespace API_PIMV.Services
 
             return userEvents;
         }
-        public Task<Events> AddEvent(Events eventObj)
+        public async Task<Events> AddEvent(AddEventRequest eventObj)
         {
-            throw new NotImplementedException();
+            var user = await context.Users.FindAsync(eventObj.User_Id);
+
+            if (user == null) throw new Exception("Usuário não encontrado.");
+
+            var newEvent = new Events()
+            {
+                Title = eventObj.Title,
+                Description = eventObj.Description,
+                Date = eventObj.Date,
+                User_Id = eventObj.User_Id,
+                Key = eventObj.Key
+            };
+
+            context.Events.Add(newEvent);
+            await context.SaveChangesAsync();
+
+            return new Events()
+            {
+                Id = newEvent.Id,
+                Title = newEvent.Title,
+                Description = newEvent.Description,
+                Date = newEvent.Date,
+                User_Id = newEvent.User_Id,
+                Key = newEvent.Key
+            };
         }
-        public Task<bool> EditEvent(int eventId, int userId)
+        public async Task<Events> EditEvent(Events events)
         {
-            throw new NotImplementedException();
+            var eventFind = await context.Events.FindAsync(events.Id);
+
+            if(eventFind == null) throw new Exception("Evento não encontrado.");
+
+            if(eventFind.User_Id != events.User_Id) throw new Exception("Esse evento pode apenas ser editado pelo usuário que o criou.");
+
+            
+            eventFind.Title = events.Title;
+            eventFind.Description = events.Description;
+            eventFind.Date = events.Date;
+            eventFind.Key = events.Key;
+
+            await context.SaveChangesAsync();
+
+            return eventFind;
+
         }
-        public Task<bool> DeleteEvent(int eventId, int userId)
+        public async Task<bool> DeleteEvent(int eventId, int userId)
         {
-            throw new NotImplementedException();
+            var eventFind = await context.Events.FindAsync(eventId);
+
+            if (eventFind == null) throw new Exception("Evento não encontrado.");
+
+            if (eventFind.User_Id != userId) throw new Exception("Esse evento pode apenas ser deletado pelo usuário que o criou.");
+
+            context.Events.Remove(eventFind);
+
+            await context.SaveChangesAsync();
+
+            return true;
         }
         
-        public Task<CertificateResponse> Certificate(int eventId, int userId)
+        public async Task<Certificate> Certificate(int eventId, int userId, string key)
         {
-            /* Criar um modelo para o certificado */
-            throw new NotImplementedException();
+            var user = await context.Users.FindAsync(userId);
+
+            if (user == null) throw new Exception("Usuário não encontrado.");
+
+            var eventFind = await context.Events.FindAsync(eventId);
+
+            if (eventFind == null) throw new Exception("Evento não encontrado.");
+
+            if (eventFind.Key != key) throw new Exception("Chave errada, tente novamente.");
+
+            var certificate = new Certificate()
+            {
+                EventTitle = eventFind.Title,
+                UserName = user.Name,
+                Description = eventFind.Description,
+                Date = eventFind.Date
+            };
+
+            return certificate;
         }
         
     }

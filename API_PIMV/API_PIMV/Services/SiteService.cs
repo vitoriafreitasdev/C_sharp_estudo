@@ -10,11 +10,11 @@ namespace API_PIMV.Services
         public async Task<bool> AddComent(int eventId, int userId, string comment)
         {
 
-            var user = await context.Users.Where(c => c.Id == userId).FirstOrDefaultAsync();
+            var user = await context.Users.FindAsync(userId);
 
             if (user == null) throw new Exception("Usuário não registrado.");
 
-            var events = await context.Events.Where(c => c.Id == eventId).FirstOrDefaultAsync();
+            var events = await context.Events.FindAsync(eventId);
 
             if (events == null) throw new Exception("Evento não registrado");
 
@@ -55,11 +55,11 @@ namespace API_PIMV.Services
         }
         public async Task<bool> RegisterToEvent(int eventId, int userId)
         {
-            var user = await context.Users.Where(c => c.Id == userId).FirstOrDefaultAsync();
+            var user = await context.Users.FindAsync(userId);
 
-            if (user == null) throw new Exception("Usuário não encontrado.");
+            if (user == null) throw new Exception("Usuário não registrado.");
 
-            var events = await context.Events.Where(c => c.Id == eventId).FirstOrDefaultAsync();
+            var events = await context.Events.FindAsync(eventId);
 
             if (events == null) throw new Exception("Evento não registrado");
 
@@ -78,7 +78,7 @@ namespace API_PIMV.Services
 
         public async Task<List<UsersGetResponse>> UsersReginterInTheEvent(int eventId)
         {
-            var events = await context.Events.Where(c => c.Id == eventId).FirstOrDefaultAsync();
+            var events = await context.Events.FindAsync(eventId);
 
             if (events == null) throw new Exception("Evento não registrado");
     

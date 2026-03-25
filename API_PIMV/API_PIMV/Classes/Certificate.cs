@@ -1,8 +1,6 @@
-﻿using API_PIMV.Models;
-
-namespace API_PIMV.Dtos
+﻿namespace API_PIMV.Classes
 {
-    public class CertificateResponse
+    public class Certificate
     {
 
         public string EventTitle { get; set; }
