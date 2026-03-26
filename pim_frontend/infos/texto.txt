@@ -1,0 +1,25 @@
+Home:
+	login 
+		leva para pagina do usuario 
+	cadastro 
+		leva para pagina de cadastro
+
+	mostrar eventos registrados
+		evento pagina
+			mostrar titulo, desc, data 
+			registrar ao evento 
+				rota do registro 
+			comentar no evento
+	
+	certificado
+		emitir certificado rota 
+
+Pagina do usuario:
+	adicionar evento 
+		adicionar evento rota
+
+	eventos registrados
+		rota do evento:
+			editar
+			deletar 
+

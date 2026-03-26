@@ -27,16 +27,23 @@ controller do evento precisa ter:
 
 	pegar evento pelo id
 
-	pegar eventos criados por um usuario especifico
-
-	inscrição ao evento
-
 	editar => passar o id do evento e do usuario que criou
 
 	deletar => passar o id do evento e do usuario que criou
 
 	emissão de certificado 
 
+	Adicionar eventos
+
+controller do site
+	
+	inscrição ao evento
+
+	pegar eventos criados por um usuario especifico
+
+	mostrar comentarios 
+
+	adicionar comentarios 
 
 	
 
