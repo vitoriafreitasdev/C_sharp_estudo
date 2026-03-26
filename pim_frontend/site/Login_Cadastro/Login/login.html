@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="js/script.js"></script>
+</head>
+<body>
+    <nav>
+        <p>
+            <a href="login.html">Home</a>
+        </p>
+        <p>
+            <a href="../../EventPage/index.html">Eventos Registrados</a>
+        </p>
+    </nav>
+    <main>
+        <div class="cadastro-container">
+            <p>
+                Ainda não tem cadastro em nosso site? Aperte o botão abaixo para se cadastrar!
+            </p>
+            <button>
+                <a href="../Cadastro/cadastro.html">Cadastro</a>
+            </button>
+        </div>
+        <div class="login-container">
+            <p id="user-message"></p>
+            <form class="login-form">
+                <label for="userEmail">Email: </label>
+                <input type="email" name="userEmail" id="userEmail">
+                <label for="userPassword">Senha: </label>
+                <input type="password" name="userPassword" id="userPassword">
+            </form>
+            <button id="login-btn">Logar</button>
+        </div>
+    </main>
+    <footer>
+        Site para registro e criação de eventos tecnológicos.
+    </footer>
+</body>
+</html>

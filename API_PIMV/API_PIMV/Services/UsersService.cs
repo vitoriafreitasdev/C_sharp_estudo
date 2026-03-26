@@ -63,7 +63,6 @@ namespace API_PIMV.Services
                     Age = user.Age,
                     Email = user.Email,
                     Password = hashPassword
-
                 };
 
                 context.Users.Add(NewUser);
@@ -85,11 +84,11 @@ namespace API_PIMV.Services
                 .Where(c => c.Email == user.Email)
                 .FirstOrDefaultAsync();
 
-            if(userFind == null) throw new Exception("E-mail inválido.");
+            if(userFind == null) throw new Exception("E-mail incorreto.");
 
             var passwordIsCorrect = Verify(user.Password, userFind.Password);
 
-            if (passwordIsCorrect == false) throw new Exception("Senha inválida.");
+            if (passwordIsCorrect == false) throw new Exception("Senha incorreta.");
 
             UserLoginResponse requestReturn = new UserLoginResponse()
             {

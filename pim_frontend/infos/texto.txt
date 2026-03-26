@@ -3,13 +3,14 @@ Home:
 		leva para pagina do usuario 
 	cadastro 
 		leva para pagina de cadastro
+				leva para pagina do usuario
 
-	mostrar eventos registrados
-		evento pagina
-			mostrar titulo, descrição, data 
-			registrar ao evento 
-				rota do registro 
-			comentar no evento
+Eventos registrados
+	cada evento 
+		mostrar titulo, descrição, data 
+		se registrar ao evento (verificar se o usuario estar logado)
+			rota do registro 
+		comentar no evento
 
 Pagina do usuario:
 	adicionar evento 

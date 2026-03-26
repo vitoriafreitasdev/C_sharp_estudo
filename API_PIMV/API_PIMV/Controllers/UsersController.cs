@@ -69,7 +69,6 @@ namespace API_PIMV.Controllers
             {
                 var requestReturn = await service.LoginUser(user);
                 return Ok(requestReturn);
-
             }
             catch (Exception ex)
             {

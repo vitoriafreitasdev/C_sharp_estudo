@@ -56,7 +56,8 @@ namespace API_PIMV.Services
             })
             .ToListAsync();
 
-            var userEvents = events.Where(e => e.User_Id == userId)
+            var userEvents = events
+            .Where(e => e.User_Id == userId)
             .Select(e => new GetUserEventResponse()
             {
                 Id = e.Id,
