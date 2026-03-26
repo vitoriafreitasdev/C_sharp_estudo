@@ -119,13 +119,13 @@ namespace API_PIMV.Services
             return eventFind;
 
         }
-        public async Task<bool> DeleteEvent(int eventId, int userId)
+        public async Task<bool> DeleteEvent(DeleteRegistEventRequest request)
         {
-            var eventFind = await context.Events.FindAsync(eventId);
+            var eventFind = await context.Events.FindAsync(request.eventId);
 
             if (eventFind == null) throw new Exception("Evento não encontrado.");
 
-            if (eventFind.User_Id != userId) throw new Exception("Esse evento pode apenas ser deletado pelo usuário que o criou.");
+            if (eventFind.User_Id != request.userId) throw new Exception("Esse evento pode apenas ser deletado pelo usuário que o criou.");
 
             context.Events.Remove(eventFind);
 
@@ -134,17 +134,17 @@ namespace API_PIMV.Services
             return true;
         }
         
-        public async Task<Certificate> Certificate(int eventId, int userId, string key)
+        public async Task<Certificate> Certificate(CertificateRequest certificateBody)
         {
-            var user = await context.Users.FindAsync(userId);
+            var user = await context.Users.FindAsync(certificateBody.userId);
 
             if (user == null) throw new Exception("Usuário não encontrado.");
 
-            var eventFind = await context.Events.FindAsync(eventId);
+            var eventFind = await context.Events.FindAsync(certificateBody.eventId);
 
             if (eventFind == null) throw new Exception("Evento não encontrado.");
 
-            if (eventFind.Key != key) throw new Exception("Chave errada, tente novamente.");
+            if (eventFind.Key != certificateBody.key) throw new Exception("Chave errada, tente novamente.");
 
             var certificate = new Certificate()
             {

@@ -7,22 +7,22 @@ namespace API_PIMV.Services
 {
     public class SiteService(AppDbContext context) : ISiteService
     {
-        public async Task<bool> AddComent(int eventId, int userId, string comment)
+        public async Task<bool> AddComent(AddComentRequest comment)
         {
 
-            var user = await context.Users.FindAsync(userId);
+            var user = await context.Users.FindAsync(comment.userId);
 
             if (user == null) throw new Exception("Usuário não registrado.");
 
-            var events = await context.Events.FindAsync(eventId);
+            var events = await context.Events.FindAsync(comment.eventId);
 
             if (events == null) throw new Exception("Evento não registrado");
 
             Comments newComment = new Comments()
             {
-                Commentary = comment,
-                UserId = userId,
-                EventId = eventId,
+                Commentary = comment.comment,
+                UserId = comment.userId,
+                EventId = comment.eventId,
             };
 
             context.Comments.Add(newComment);
@@ -53,20 +53,20 @@ namespace API_PIMV.Services
 
             return comments;
         }
-        public async Task<bool> RegisterToEvent(int eventId, int userId)
+        public async Task<bool> RegisterToEvent(DeleteRegistEventRequest request)
         {
-            var user = await context.Users.FindAsync(userId);
+            var user = await context.Users.FindAsync(request.userId);
 
             if (user == null) throw new Exception("Usuário não registrado.");
 
-            var events = await context.Events.FindAsync(eventId);
+            var events = await context.Events.FindAsync(request.eventId);
 
             if (events == null) throw new Exception("Evento não registrado");
 
             RegisteredUsersInEvents register = new RegisteredUsersInEvents()
             {
-                userId = userId,
-                eventId = eventId,
+                userId = request.userId,
+                eventId = request.eventId,
             };
 
             context.RegisteredUsersInEvents.Add(register);

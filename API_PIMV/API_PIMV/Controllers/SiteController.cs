@@ -12,11 +12,11 @@ namespace API_PIMV.Controllers
     public class SiteController(ISiteService service) : Controller
     {
         [HttpPost("addComment")]
-        public async Task<ActionResult<bool>> AddingComments(int eventId, int userId, string comment)
+        public async Task<ActionResult<bool>> AddingComments(AddComentRequest comment)
         {
             try
             {
-                var requestReturn = await service.AddComent(eventId, userId, comment);
+                var requestReturn = await service.AddComent(comment);
 
                 if (requestReturn == true)
                 {
@@ -31,7 +31,7 @@ namespace API_PIMV.Controllers
             }
         }
 
-        [HttpGet("comments")]
+        [HttpGet("comments/{eventId}")]
         public async Task<ActionResult<List<Comments>>> ShowingEventComments(int eventId)
         {
             try
@@ -48,11 +48,11 @@ namespace API_PIMV.Controllers
         }
 
         [HttpPost("registerToEvent")]
-        public async Task<ActionResult<bool>> EventRegister(int eventId, int userId)
+        public async Task<ActionResult<bool>> EventRegister(DeleteRegistEventRequest request)
         {
             try
             {
-                var requestReturn = await service.RegisterToEvent(eventId, userId);
+                var requestReturn = await service.RegisterToEvent(request);
 
                 return Ok(requestReturn);
             }
@@ -62,7 +62,7 @@ namespace API_PIMV.Controllers
             }
         }
 
-        [HttpGet("registeredUsersInEvent")]
+        [HttpGet("registeredUsersInEvent/{eventId}")]
         public async Task<ActionResult<List<UsersGetResponse>>> getUsersRegisteredInEvent(int eventId)
         {
             try

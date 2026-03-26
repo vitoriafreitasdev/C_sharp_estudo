@@ -5,9 +5,9 @@ namespace API_PIMV.Services
 {
     public interface ISiteService
     {
-        Task<bool> AddComent(int eventId, int userId, string comment);
+        Task<bool> AddComent(AddComentRequest comment);
         Task<List<Comments>> ShowComments(int eventId);
-        Task<bool> RegisterToEvent(int eventId, int userId);
+        Task<bool> RegisterToEvent(DeleteRegistEventRequest request);
         Task<List<UsersGetResponse>> UsersReginterInTheEvent(int eventId);
     }
 }

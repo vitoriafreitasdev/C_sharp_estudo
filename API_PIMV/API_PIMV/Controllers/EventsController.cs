@@ -41,7 +41,7 @@ namespace API_PIMV.Controllers
             }
         }
 
-        [HttpGet("getEventByUser")]
+        [HttpGet("getEventByUser/{userId}")]
         public async Task<ActionResult<List<GetUserEventResponse?>>> GetUserEvent(int userId)
         {
             try
@@ -87,11 +87,11 @@ namespace API_PIMV.Controllers
         }
 
         [HttpDelete("DeleteEvent")]
-        public async Task<ActionResult<bool>> DelEvent(int eventId, int userId)
+        public async Task<ActionResult<bool>> DelEvent(DeleteRegistEventRequest request)
         {
             try
             {
-                var eventDel = await service.DeleteEvent(eventId, userId);
+                var eventDel = await service.DeleteEvent(request);
 
                 return Ok(eventDel);
             }
@@ -101,12 +101,12 @@ namespace API_PIMV.Controllers
             }
         }
 
-        [HttpGet("GetCertificateData")]
-        public async Task<ActionResult<Certificate>> CertificateData(int eventId, int userId, string key)
+        [HttpPost("GetCertificateData")]
+        public async Task<ActionResult<Certificate>> CertificateData(CertificateRequest certificateBody)
         {
             try
             {
-                var certificate = await service.Certificate(eventId, userId, key);
+                var certificate = await service.Certificate(certificateBody);
 
                 return Ok(certificate);
             }

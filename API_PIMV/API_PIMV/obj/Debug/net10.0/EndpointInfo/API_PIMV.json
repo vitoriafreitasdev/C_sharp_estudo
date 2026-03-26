@@ -95,7 +95,7 @@
         }
       }
     },
-    "/api/Events/getEventByUser": {
+    "/api/Events/getEventByUser/{userId}": {
       "get": {
         "tags": [
           "Events"
@@ -103,7 +103,8 @@
         "parameters": [
           {
             "name": "userId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "pattern": "^-?(?:0|[1-9]\\d*)$",
               "type": [
@@ -250,32 +251,26 @@
         "tags": [
           "Events"
         ],
-        "parameters": [
-          {
-            "name": "eventId",
-            "in": "query",
-            "schema": {
-              "pattern": "^-?(?:0|[1-9]\\d*)$",
-              "type": [
-                "integer",
-                "string"
-              ],
-              "format": "int32"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRegistEventRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRegistEventRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRegistEventRequest"
+              }
             }
           },
-          {
-            "name": "userId",
-            "in": "query",
-            "schema": {
-              "pattern": "^-?(?:0|[1-9]\\d*)$",
-              "type": [
-                "integer",
-                "string"
-              ],
-              "format": "int32"
-            }
-          }
-        ],
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "OK",
@@ -301,43 +296,30 @@
       }
     },
     "/api/Events/GetCertificateData": {
-      "get": {
+      "post": {
         "tags": [
           "Events"
         ],
-        "parameters": [
-          {
-            "name": "eventId",
-            "in": "query",
-            "schema": {
-              "pattern": "^-?(?:0|[1-9]\\d*)$",
-              "type": [
-                "integer",
-                "string"
-              ],
-              "format": "int32"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CertificateRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CertificateRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CertificateRequest"
+              }
             }
           },
-          {
-            "name": "userId",
-            "in": "query",
-            "schema": {
-              "pattern": "^-?(?:0|[1-9]\\d*)$",
-              "type": [
-                "integer",
-                "string"
-              ],
-              "format": "int32"
-            }
-          },
-          {
-            "name": "key",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "OK",
@@ -367,39 +349,26 @@
         "tags": [
           "Site"
         ],
-        "parameters": [
-          {
-            "name": "eventId",
-            "in": "query",
-            "schema": {
-              "pattern": "^-?(?:0|[1-9]\\d*)$",
-              "type": [
-                "integer",
-                "string"
-              ],
-              "format": "int32"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddComentRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddComentRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddComentRequest"
+              }
             }
           },
-          {
-            "name": "userId",
-            "in": "query",
-            "schema": {
-              "pattern": "^-?(?:0|[1-9]\\d*)$",
-              "type": [
-                "integer",
-                "string"
-              ],
-              "format": "int32"
-            }
-          },
-          {
-            "name": "comment",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "OK",
@@ -424,7 +393,7 @@
         }
       }
     },
-    "/api/Site/comments": {
+    "/api/Site/comments/{eventId}": {
       "get": {
         "tags": [
           "Site"
@@ -432,7 +401,8 @@
         "parameters": [
           {
             "name": "eventId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "pattern": "^-?(?:0|[1-9]\\d*)$",
               "type": [
@@ -481,32 +451,26 @@
         "tags": [
           "Site"
         ],
-        "parameters": [
-          {
-            "name": "eventId",
-            "in": "query",
-            "schema": {
-              "pattern": "^-?(?:0|[1-9]\\d*)$",
-              "type": [
-                "integer",
-                "string"
-              ],
-              "format": "int32"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRegistEventRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRegistEventRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRegistEventRequest"
+              }
             }
           },
-          {
-            "name": "userId",
-            "in": "query",
-            "schema": {
-              "pattern": "^-?(?:0|[1-9]\\d*)$",
-              "type": [
-                "integer",
-                "string"
-              ],
-              "format": "int32"
-            }
-          }
-        ],
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "OK",
@@ -531,7 +495,7 @@
         }
       }
     },
-    "/api/Site/registeredUsersInEvent": {
+    "/api/Site/registeredUsersInEvent/{eventId}": {
       "get": {
         "tags": [
           "Site"
@@ -539,7 +503,8 @@
         "parameters": [
           {
             "name": "eventId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "pattern": "^-?(?:0|[1-9]\\d*)$",
               "type": [
@@ -766,6 +731,30 @@
   },
   "components": {
     "schemas": {
+      "AddComentRequest": {
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "userId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "comment": {
+            "type": "string"
+          }
+        }
+      },
       "AddEventRequest": {
         "type": "object",
         "properties": {
@@ -810,6 +799,30 @@
           }
         }
       },
+      "CertificateRequest": {
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "userId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "key": {
+            "type": "string"
+          }
+        }
+      },
       "Comments": {
         "type": "object",
         "properties": {
@@ -833,6 +846,27 @@
             "format": "int32"
           },
           "eventId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          }
+        }
+      },
+      "DeleteRegistEventRequest": {
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "userId": {
             "pattern": "^-?(?:0|[1-9]\\d*)$",
             "type": [
               "integer",

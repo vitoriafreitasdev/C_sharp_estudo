@@ -11,8 +11,8 @@ namespace API_PIMV.Services
 		Task<List<GetUserEventResponse?>> GetEventsRegisteredByUser(int userId);
 		Task<Events> AddEvent(AddEventRequest eventObj);
 		Task<Events> EditEvent(Events events);
-		Task<bool> DeleteEvent(int eventId, int userId);
-		Task<Certificate> Certificate(int eventId, int userId, string key);
+		Task<bool> DeleteEvent(DeleteRegistEventRequest request);
+		Task<Certificate> Certificate(CertificateRequest certificateBody);
 		
     }
 }

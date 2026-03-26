@@ -34,14 +34,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "request",
+        "Type": "API_PIMV.Dtos.DeleteRegistEventRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -86,24 +81,14 @@
     "ContainingType": "API_PIMV.Controllers.EventsController",
     "Method": "CertificateData",
     "RelativePath": "api/Events/GetCertificateData",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "key",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "certificateBody",
+        "Type": "API_PIMV.Dtos.CertificateRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -147,7 +132,7 @@
   {
     "ContainingType": "API_PIMV.Controllers.EventsController",
     "Method": "GetUserEvent",
-    "RelativePath": "api/Events/getEventByUser",
+    "RelativePath": "api/Events/getEventByUser/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -155,7 +140,7 @@
       {
         "Name": "userId",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -199,19 +184,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
         "Name": "comment",
-        "Type": "System.String",
-        "IsRequired": false
+        "Type": "API_PIMV.Dtos.AddComentRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -229,7 +204,7 @@
   {
     "ContainingType": "API_PIMV.Controllers.SiteController",
     "Method": "ShowingEventComments",
-    "RelativePath": "api/Site/comments",
+    "RelativePath": "api/Site/comments/{eventId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -237,7 +212,7 @@
       {
         "Name": "eventId",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -255,7 +230,7 @@
   {
     "ContainingType": "API_PIMV.Controllers.SiteController",
     "Method": "getUsersRegisteredInEvent",
-    "RelativePath": "api/Site/registeredUsersInEvent",
+    "RelativePath": "api/Site/registeredUsersInEvent/{eventId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -263,7 +238,7 @@
       {
         "Name": "eventId",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -287,14 +262,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "eventId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "request",
+        "Type": "API_PIMV.Dtos.DeleteRegistEventRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
