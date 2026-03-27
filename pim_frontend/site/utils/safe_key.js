@@ -1,2 +1,2 @@
-const key = "64#4524$$"
+const key = "64452454352T"
 export default key

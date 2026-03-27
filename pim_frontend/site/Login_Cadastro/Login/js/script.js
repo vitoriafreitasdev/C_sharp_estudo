@@ -1,4 +1,4 @@
-import UserFetch from "../../../utils/log_cad_user.js"
+import UserFetch from "../../../utils/fetch_post.js"
 import key from "../../../utils/safe_key.js"
 const userEmail = document.getElementById("userEmail")
 const userPassword = document.getElementById("userPassword")
@@ -36,7 +36,8 @@ inputSubmit.addEventListener("click", async (e) => {
 
     if(res.id){
         // chave para saber se usuário está logado.
-        localStorage.setItem(key)
+        const keyUser = key + res.id
+        localStorage.setItem("key", keyUser)
         window.location.assign(`/site/UserPage/index.html?id=${res.id}`)
     }
     else{

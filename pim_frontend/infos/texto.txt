@@ -9,7 +9,6 @@ Eventos registrados
 	cada evento 
 		mostrar titulo, descrição, data 
 		se registrar ao evento (verificar se o usuario estar logado)
-			rota do registro 
 		comentar no evento
 
 Pagina do usuario:
@@ -18,8 +17,9 @@ Pagina do usuario:
 
 	eventos registrados
 		rota do evento:
+			mostrar usuarios inscritos
 			editar
-			deletar 
+			deletar 		
 
 	certificado
 		emitir certificado rota 
