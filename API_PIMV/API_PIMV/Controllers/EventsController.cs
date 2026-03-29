@@ -92,7 +92,6 @@ namespace API_PIMV.Controllers
             try
             {
                 var eventDel = await service.DeleteEvent(request);
-
                 return Ok(eventDel);
             }
             catch (Exception ex)

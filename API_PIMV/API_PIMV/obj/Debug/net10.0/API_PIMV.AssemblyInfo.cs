@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("API_PIMV")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4800fb606433331432a3824e728e20c6485cd604")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6098d11bf3bc2987f1f1886fbbd320895c304087")]
 [assembly: System.Reflection.AssemblyProductAttribute("API_PIMV")]
 [assembly: System.Reflection.AssemblyTitleAttribute("API_PIMV")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -77,6 +77,10 @@ namespace API_PIMV.Services
         {
             var user = await context.Users.FindAsync(eventObj.User_Id);
 
+            var eventFind = await context.Events.Where(c => c.Key == eventObj.Key).FirstOrDefaultAsync();
+
+            if(eventFind != null) throw new Exception("Essa chave já existe.");
+
             if (user == null) throw new Exception("Usuário não encontrado.");
 
             var newEvent = new Events()
@@ -123,6 +127,10 @@ namespace API_PIMV.Services
         public async Task<bool> DeleteEvent(DeleteRegistEventRequest request)
         {
             var eventFind = await context.Events.FindAsync(request.eventId);
+            //Removendo da tabela de usuários incritos também
+            await context.RegisteredUsersInEvents
+            .Where(c => c.eventId == request.eventId)
+            .ExecuteDeleteAsync();
 
             if (eventFind == null) throw new Exception("Evento não encontrado.");
 
@@ -141,11 +149,9 @@ namespace API_PIMV.Services
 
             if (user == null) throw new Exception("Usuário não encontrado.");
 
-            var eventFind = await context.Events.FindAsync(certificateBody.eventId);
+            var eventFind = await context.Events.Where(c => c.Key == certificateBody.key).FirstAsync();
 
             if (eventFind == null) throw new Exception("Evento não encontrado.");
-
-            if (eventFind.Key != certificateBody.key) throw new Exception("Chave errada, tente novamente.");
 
             var certificate = new Certificate()
             {

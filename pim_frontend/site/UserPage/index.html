@@ -4,8 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type="module" src="js/script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    usuario pag
+    <main>
+        <header>
+            <button id="certificateBtn">Gerar certificado de um evento</button>
+        </header>
+        <section class="form-event-container">
+            <h2>Deseja registrar um evento? Preencha o formulário abaixo: </h2>
+            <p id="userMessage"></p>
+            <form>
+                <label for="title">Título: </label>
+                <input type="text" name="title" id="title">
+                <label for="description">Descrição: </label>
+                <input type="text" name="description" id="description">
+                <label for="date">Data: </label>
+                <input type="date" name="date" id="date">
+                <label for="key">Key para emissão de certificao: </label>
+                <input type="text" name="key" id="key">
+                <button id="addEventBtn">Adicionar evento</button>
+            </form>
+        </section>
+
+        <section class="user-events-container">
+            <div class="event-edit">
+                <form >
+                    <h2>Edição de evento:</h2>
+                    <label for="titleEdit">Título: </label>
+                    <input type="text" name="titleEdit" id="titleEdit">
+                    <label for="descriptionEdit">Descrição: </label>
+                    <input type="text" name="descriptionEdit" id="descriptionEdit">
+                    <label for="dateEdit">Data: </label>
+                    <input type="date" name="dateEdit" id="dateEdit">
+                    <label for="keyEdit">Key para emissão de certificao: </label>
+                    <input type="text" name="keyEdit" id="keyEdit">
+                    <button id="EditEventBtn">Editar evento</button>
+                </form>
+            </div>
+            <h2>Seus eventos registrados:</h2>
+        </section>
+    </main>
 </body>
 </html>

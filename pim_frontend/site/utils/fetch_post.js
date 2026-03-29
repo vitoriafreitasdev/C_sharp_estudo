@@ -1,8 +1,8 @@
 
-export default async function UserFetch(data, url) {
+export default async function UserFetch(data, url, method = "post") {
     try {
         const request = await fetch(url, {
-            method: "post",
+            method: method,
             headers: {
                 "Content-Type": "application/json"
             },
