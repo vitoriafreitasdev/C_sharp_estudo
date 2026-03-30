@@ -1,0 +1,66 @@
+
+body{
+    position: relative; 
+    height: 100vh;
+    background-image: url("../../img/world_img.png");
+    background-position: right top ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-bottom: 2rem;
+}
+main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+}
+section{
+    height: 50vh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.cadastro-container{
+    background-color: #b4b4b4bb;
+    width: 40%;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+.login-container{
+    background-color: #f3f3f3c9;
+    width: 60%;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+}
+.login-form input{
+    width: 25vw;
+}
+button{
+    width: 50%;
+    margin-top: 1rem;
+}
+button:hover{
+    text-decoration: underline;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+@media screen and (max-width: 500px) {
+    main{
+        width: 90vw;
+    }
+
+    button{
+        width: 70%;
+    }
+}

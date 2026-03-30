@@ -1,3 +1,5 @@
+
+
 import key from "../../utils/safe_key.js"
 import get_func from "../../utils/get_function.js"
 import UserFetch from "../../utils/fetch_post.js"
@@ -38,7 +40,7 @@ async function loadEventsInTheScreen() {
         subscribeBtn.addEventListener("click", async () => {
             const keyLocal = localStorage.getItem("key")
 
-            if(!keyLocal) pMessageToUser.textContent = "Precisa estar logado para adicionar comentários no evento."
+            if(!keyLocal) pMessageToUser.textContent = "Precisa estar logado para se inscrever ao evento."
 
             const keyNumber = keyLocal.split("T")[0] + "T" // pega o valor o da key junto com o T
             const userId = keyLocal.split("T")[1] // pega apenas o id

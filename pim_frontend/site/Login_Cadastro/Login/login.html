@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="module" src="js/script.js"></script>
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="login.css">
+
 </head>
 <body>
     <nav>
@@ -16,15 +19,15 @@
         </p>
     </nav>
     <main>
-        <div class="cadastro-container">
-            <p>
-                Ainda não tem cadastro em nosso site? Aperte o botão abaixo para se cadastrar!
-            </p>
-            <button>
-                <a href="../Cadastro/cadastro.html">Cadastro</a>
-            </button>
-        </div>
-        <div class="login-container">
+        <section class="cadastro-container">
+        <p>
+            Ainda não tem cadastro em nosso site? Aperte o botão abaixo para se cadastrar!
+        </p>
+        <button>
+            <a href="../Cadastro/cadastro.html">Cadastro</a>
+        </button>
+        </section>
+        <section class="login-container">
             <p id="user-message"></p>
             <form class="login-form">
                 <label for="userEmail">Email: </label>
@@ -33,10 +36,12 @@
                 <input type="password" name="userPassword" id="userPassword">
             </form>
             <button id="login-btn">Logar</button>
-        </div>
+        </section>
     </main>
     <footer>
-        Site para registro e criação de eventos tecnológicos.
+        <p>Site para registro e criação de eventos tecnológicos.</p>
+        <p>Feito por: </p>
+        <p>Vitória Freitas</p>
     </footer>
 </body>
 </html>

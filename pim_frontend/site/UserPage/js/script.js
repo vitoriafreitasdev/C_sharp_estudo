@@ -43,7 +43,7 @@ async function loadUserEvents(){
     const events = await get_func(`https://localhost:7120/api/Events/getEventByUser/${userId}`)
     events.map((events) => {
         const div = document.createElement("div")
-        const h2Title = document.createElement("h2")
+        const h3Title = document.createElement("h3")
         const pDesc = document.createElement("p")
         const pData = document.createElement("p")
         const pKey = document.createElement("p")
@@ -52,7 +52,7 @@ async function loadUserEvents(){
         const buttonShowUsers = document.createElement("button")
         const date = new Date(events.date)
 
-        h2Title.textContent = `Título: ${events.title }`
+        h3Title.textContent = `Título: ${events.title }`
         pDesc.textContent = `Descrição: ${events.description}`
         pData.textContent = `Data: ${date.toLocaleDateString("en-GB")}`
         pKey.textContent = `Key: ${events.key}`
@@ -61,7 +61,7 @@ async function loadUserEvents(){
         buttonShowUsers.textContent = "Mostrar usuários inscritos"
         div.classList.add("events-user-container")
 
-        div.appendChild(h2Title)
+        div.appendChild(h3Title)
         div.appendChild(pDesc)
         div.appendChild(pData)
         div.appendChild(pKey)
@@ -69,6 +69,7 @@ async function loadUserEvents(){
         div.appendChild(buttonDelete)
         div.appendChild(buttonShowUsers)
 
+        div.classList.add("event-user-container")
         userEventsContainer.appendChild(div)
         // edição de dados
         buttonEdit.addEventListener("click", async (e) => {
