@@ -3,7 +3,6 @@ using API_PIMV.Data;
 using API_PIMV.Models;
 using API_PIMV.Dtos;
 using static BCrypt.Net.BCrypt;
-
 namespace API_PIMV.Services
 {
     public class UsersService(AppDbContext context) : IUsersServices
@@ -94,6 +93,7 @@ namespace API_PIMV.Services
             {
                 Id = userFind.Id,
                 Name = userFind.Name,
+                Age = userFind.Age,
                 Email = userFind.Email
             }; 
 

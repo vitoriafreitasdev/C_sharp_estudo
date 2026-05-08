@@ -42,7 +42,6 @@ async function baixarImagemComDadosAPI(dados) {
         console.error('Erro:', erro);
     }
 }
-
 certificateBtn.addEventListener("click", async () => {
 
     const data = {

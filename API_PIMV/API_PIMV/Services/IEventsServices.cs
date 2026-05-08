@@ -1,7 +1,6 @@
 ﻿using API_PIMV.Classes;
 using API_PIMV.Dtos;
 using API_PIMV.Models;
-
 namespace API_PIMV.Services
 {
     public interface IEventsServices

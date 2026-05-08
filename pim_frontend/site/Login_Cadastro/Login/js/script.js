@@ -44,5 +44,4 @@ inputSubmit.addEventListener("click", async (e) => {
         messageToUser.innerText = res
     }
    
-
 })

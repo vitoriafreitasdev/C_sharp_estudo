@@ -3,7 +3,6 @@ using API_PIMV.Data;
 using API_PIMV.Dtos;
 using API_PIMV.Models;
 using Microsoft.EntityFrameworkCore;
-
 namespace API_PIMV.Services
 {
     public class EventsServices(AppDbContext context) : IEventsServices

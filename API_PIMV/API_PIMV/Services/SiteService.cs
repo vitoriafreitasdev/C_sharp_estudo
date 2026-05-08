@@ -2,7 +2,6 @@
 using API_PIMV.Data;
 using API_PIMV.Models;
 using API_PIMV.Dtos;
-
 namespace API_PIMV.Services
 {
     public class SiteService(AppDbContext context) : ISiteService

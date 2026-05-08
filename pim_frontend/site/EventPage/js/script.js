@@ -5,7 +5,6 @@ import get_func from "../../utils/get_function.js"
 import UserFetch from "../../utils/fetch_post.js"
 
 const eventsContainer = document.querySelector(".events-container")
-
 async function loadEventsInTheScreen() {
     const events = await get_func("https://localhost:7120/api/Events/getEvents")
 
@@ -67,5 +66,4 @@ async function loadEventsInTheScreen() {
     })
 
 }
-
 loadEventsInTheScreen()

@@ -1,0 +1,15 @@
+C:\c_sharp\relatorio_exerc\relatorio7\relatorio7\bin\Debug\net10.0\relatorio7.exe
+C:\c_sharp\relatorio_exerc\relatorio7\relatorio7\bin\Debug\net10.0\relatorio7.deps.json
+C:\c_sharp\relatorio_exerc\relatorio7\relatorio7\bin\Debug\net10.0\relatorio7.runtimeconfig.json
+C:\c_sharp\relatorio_exerc\relatorio7\relatorio7\bin\Debug\net10.0\relatorio7.dll
+C:\c_sharp\relatorio_exerc\relatorio7\relatorio7\bin\Debug\net10.0\relatorio7.pdb
+C:\c_sharp\relatorio_exerc\relatorio7\relatorio7\obj\Debug\net10.0\relatorio7.GeneratedMSBuildEditorConfig.editorconfig
+C:\c_sharp\relatorio_exerc\relatorio7\relatorio7\obj\Debug\net10.0\relatorio7.AssemblyInfoInputs.cache
+C:\c_sharp\relatorio_exerc\relatorio7\relatorio7\obj\Debug\net10.0\relatorio7.AssemblyInfo.cs
+C:\c_sharp\relatorio_exerc\relatorio7\relatorio7\obj\Debug\net10.0\relatorio7.csproj.CoreCompileInputs.cache
+C:\c_sharp\relatorio_exerc\relatorio7\relatorio7\obj\Debug\net10.0\relatorio7.sourcelink.json
+C:\c_sharp\relatorio_exerc\relatorio7\relatorio7\obj\Debug\net10.0\relatorio7.dll
+C:\c_sharp\relatorio_exerc\relatorio7\relatorio7\obj\Debug\net10.0\refint\relatorio7.dll
+C:\c_sharp\relatorio_exerc\relatorio7\relatorio7\obj\Debug\net10.0\relatorio7.pdb
+C:\c_sharp\relatorio_exerc\relatorio7\relatorio7\obj\Debug\net10.0\relatorio7.genruntimeconfig.cache
+C:\c_sharp\relatorio_exerc\relatorio7\relatorio7\obj\Debug\net10.0\ref\relatorio7.dll

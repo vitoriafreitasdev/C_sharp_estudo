@@ -1,0 +1,15 @@
+C:\c_sharp\relatorio_exerc\relatorio2\relatorio2\relatorio2\bin\Debug\net10.0\relatorio2.exe
+C:\c_sharp\relatorio_exerc\relatorio2\relatorio2\relatorio2\bin\Debug\net10.0\relatorio2.deps.json
+C:\c_sharp\relatorio_exerc\relatorio2\relatorio2\relatorio2\bin\Debug\net10.0\relatorio2.runtimeconfig.json
+C:\c_sharp\relatorio_exerc\relatorio2\relatorio2\relatorio2\bin\Debug\net10.0\relatorio2.dll
+C:\c_sharp\relatorio_exerc\relatorio2\relatorio2\relatorio2\bin\Debug\net10.0\relatorio2.pdb
+C:\c_sharp\relatorio_exerc\relatorio2\relatorio2\relatorio2\obj\Debug\net10.0\relatorio2.GeneratedMSBuildEditorConfig.editorconfig
+C:\c_sharp\relatorio_exerc\relatorio2\relatorio2\relatorio2\obj\Debug\net10.0\relatorio2.AssemblyInfoInputs.cache
+C:\c_sharp\relatorio_exerc\relatorio2\relatorio2\relatorio2\obj\Debug\net10.0\relatorio2.AssemblyInfo.cs
+C:\c_sharp\relatorio_exerc\relatorio2\relatorio2\relatorio2\obj\Debug\net10.0\relatorio2.csproj.CoreCompileInputs.cache
+C:\c_sharp\relatorio_exerc\relatorio2\relatorio2\relatorio2\obj\Debug\net10.0\relatorio2.sourcelink.json
+C:\c_sharp\relatorio_exerc\relatorio2\relatorio2\relatorio2\obj\Debug\net10.0\relatorio2.dll
+C:\c_sharp\relatorio_exerc\relatorio2\relatorio2\relatorio2\obj\Debug\net10.0\refint\relatorio2.dll
+C:\c_sharp\relatorio_exerc\relatorio2\relatorio2\relatorio2\obj\Debug\net10.0\relatorio2.pdb
+C:\c_sharp\relatorio_exerc\relatorio2\relatorio2\relatorio2\obj\Debug\net10.0\relatorio2.genruntimeconfig.cache
+C:\c_sharp\relatorio_exerc\relatorio2\relatorio2\relatorio2\obj\Debug\net10.0\ref\relatorio2.dll

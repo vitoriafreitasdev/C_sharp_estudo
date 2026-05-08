@@ -1,0 +1,14 @@
+C:\estudos\relatorio1\relatorio1\bin\Debug\net10.0\relatorio1.exe
+C:\estudos\relatorio1\relatorio1\bin\Debug\net10.0\relatorio1.deps.json
+C:\estudos\relatorio1\relatorio1\bin\Debug\net10.0\relatorio1.runtimeconfig.json
+C:\estudos\relatorio1\relatorio1\bin\Debug\net10.0\relatorio1.dll
+C:\estudos\relatorio1\relatorio1\bin\Debug\net10.0\relatorio1.pdb
+C:\estudos\relatorio1\relatorio1\obj\Debug\net10.0\relatorio1.GeneratedMSBuildEditorConfig.editorconfig
+C:\estudos\relatorio1\relatorio1\obj\Debug\net10.0\relatorio1.AssemblyInfoInputs.cache
+C:\estudos\relatorio1\relatorio1\obj\Debug\net10.0\relatorio1.AssemblyInfo.cs
+C:\estudos\relatorio1\relatorio1\obj\Debug\net10.0\relatorio1.csproj.CoreCompileInputs.cache
+C:\estudos\relatorio1\relatorio1\obj\Debug\net10.0\relatorio1.dll
+C:\estudos\relatorio1\relatorio1\obj\Debug\net10.0\refint\relatorio1.dll
+C:\estudos\relatorio1\relatorio1\obj\Debug\net10.0\relatorio1.pdb
+C:\estudos\relatorio1\relatorio1\obj\Debug\net10.0\relatorio1.genruntimeconfig.cache
+C:\estudos\relatorio1\relatorio1\obj\Debug\net10.0\ref\relatorio1.dll
