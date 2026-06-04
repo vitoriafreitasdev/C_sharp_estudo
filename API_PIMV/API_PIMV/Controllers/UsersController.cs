@@ -30,11 +30,7 @@ namespace API_PIMV.Controllers
             try
             {
                 var user = await service.GetUsers(id);
-
                 return Ok(user);
-                
-                
-
             }
             catch (Exception ex)
             {

@@ -30,3 +30,4 @@ app.UseCors("Allow");
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
+
