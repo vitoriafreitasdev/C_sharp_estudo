@@ -8,7 +8,7 @@ namespace relatorio3
 {
     public class Aluno
     {
-        private string _nomeAluno;
+        private string _nome;
         private int _matricula;
         private string _turma;
 
@@ -17,13 +17,13 @@ namespace relatorio3
         {
             get
             {
-                return _nomeAluno;
+                return _nome;
             }
 
 
             set
             {
-                _nomeAluno = value;
+                _nome = value;
             }
         }
         public int Matricula
@@ -53,9 +53,9 @@ namespace relatorio3
             }
         }
 
-        public void MostrarAtributos()
+        public void atributos()
         {
-            Console.WriteLine(_nomeAluno);
+            Console.WriteLine(_nome);
         }
     }
 }

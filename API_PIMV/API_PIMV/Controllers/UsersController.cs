@@ -1,9 +1,12 @@
 ﻿
 using API_PIMV.Dtos;
+using API_PIMV.Helpers;
 using API_PIMV.Models;
 using API_PIMV.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace API_PIMV.Controllers
 {
@@ -25,10 +28,25 @@ namespace API_PIMV.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<UsersGetResponse?>> GetUserById(int id)
         {
             try
             {
+                var tokenHandler = new JwtSecurityTokenHandlerWrapper();
+               
+                var token = Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+
+                Console.WriteLine(token);
+
+                // Validate the JWT and retrieve claims about the user.
+                var claimsPrincipal = tokenHandler.ValidateJwtToken(token);
+
+                // Check if the user is authenticated. If not, return an unauthorized response.
+                if (claimsPrincipal?.Identity?.IsAuthenticated != true)
+                {
+                    return Unauthorized("Token has expired.");
+                }
                 var user = await service.GetUsers(id);
                 return Ok(user);
             }
@@ -73,3 +91,5 @@ namespace API_PIMV.Controllers
         }
     }
 }
+
+//https://akashjwork.medium.com/mastering-jwt-authorization-in-asp-net-core-7-with-automation-for-clean-code-and-efficiency-4259647de025

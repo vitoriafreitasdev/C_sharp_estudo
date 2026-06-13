@@ -1,16 +1,16 @@
 ﻿
 namespace relatorio2
 {
-    public class SystemClass
+    public class MetodosDoPrograma
     {
-        public void CaseSensitiveCase()
+        public void sensitiveCase()
         {
             int aluno = 10;
             int Aluno = 20;
             Console.WriteLine($"aluno: {aluno}");
             Console.WriteLine($"Aluno: {Aluno}");
         }
-        public void GradeClassifier(int nota)
+        public void Nota(int nota)
         {
         
             if (nota < 50)
@@ -30,19 +30,8 @@ namespace relatorio2
                 Console.WriteLine("Desempenho sensacional");
             }
         }
-        public void SwitchCommand(char comando)
+        public void ComandoSwitch(char comando)
         {
-            //Expressão switch, guardando resultado em variável
-            /*
-            string mensagem = comando switch
-            {
-                'A' => "Comando A",
-                'B' => "Comando B",
-                'C' => "Comando C",
-                _ => "Comando desconhecido"
-            };
-            Console.WriteLine(mensagem); 
-            */
             switch (comando)
             {
                 case 'A':
@@ -61,7 +50,7 @@ namespace relatorio2
             }
             
         }
-        public void Count(int value)
+        public void Contador(int value)
         {
             Console.WriteLine($"\nContar até {value}");
             for (var i = 1; i <= value; i += 1)
@@ -69,7 +58,7 @@ namespace relatorio2
                 Console.WriteLine(i);
             }
         }
-        public void RegressiveCount(int contador)
+        public void ContadorRegressivo(int contador)
         {
             Console.WriteLine("\nContagem regressiva:");
             while (contador >= 1)

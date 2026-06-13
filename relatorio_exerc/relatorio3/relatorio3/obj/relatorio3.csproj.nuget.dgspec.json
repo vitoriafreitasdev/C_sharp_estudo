@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\c_sharp\\relatorio_exerc\\relatorio3\\relatorio3\\relatorio3\\relatorio3.csproj": {}
+    "C:\\c_sharp\\relatorio_exerc\\relatorio3\\relatorio3\\relatorio3.csproj": {}
   },
   "projects": {
-    "C:\\c_sharp\\relatorio_exerc\\relatorio3\\relatorio3\\relatorio3\\relatorio3.csproj": {
+    "C:\\c_sharp\\relatorio_exerc\\relatorio3\\relatorio3\\relatorio3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\c_sharp\\relatorio_exerc\\relatorio3\\relatorio3\\relatorio3\\relatorio3.csproj",
+        "projectUniqueName": "C:\\c_sharp\\relatorio_exerc\\relatorio3\\relatorio3\\relatorio3.csproj",
         "projectName": "relatorio3",
-        "projectPath": "C:\\c_sharp\\relatorio_exerc\\relatorio3\\relatorio3\\relatorio3\\relatorio3.csproj",
+        "projectPath": "C:\\c_sharp\\relatorio_exerc\\relatorio3\\relatorio3\\relatorio3.csproj",
         "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
-        "outputPath": "C:\\c_sharp\\relatorio_exerc\\relatorio3\\relatorio3\\relatorio3\\obj\\",
+        "outputPath": "C:\\c_sharp\\relatorio_exerc\\relatorio3\\relatorio3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -67,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

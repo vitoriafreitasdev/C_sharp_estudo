@@ -4,26 +4,26 @@ class Program
 { 
     static void Main(string[] args)
     {
-        SystemClass system  = new SystemClass();
-        //Etapa 1 — Mensagens iniciais no console
-        Console.WriteLine("Demonstração de condicionais e laços");
+        MetodosDoPrograma programa  = new MetodosDoPrograma();
+        //Mensagens iniciais no console
+        Console.WriteLine("Condicionais e laços");
         Console.WriteLine();
-        //Etapa 2 — Identificadores case -sensitive
-        system.CaseSensitiveCase();
-        //Etapa 3 — Classificação por nota com if / else if / else | Testamos com esses números: 40, 70 e 85 
-        system.GradeClassifier(85);
-        //Etapa 4 — Comando com switch  | Testamos com esses comandos: A, B, C e D
-        system.SwitchCommand('A');
-        //Etapa 5 — Contagem com o laço for | Testamos com esses números: 5, 10, 15
-        system.Count(5);
-        //Etapa 6 — Contagem regressiva com o laço while  | Testamos com esses números: 3, 5, 10
-        system.RegressiveCount(3);
-        string? entrada = null;
+        //Identificadores case -sensitive
+        programa.sensitiveCase();
+        //Classificação por nota com if / else if / else 
+        programa.Nota(95);
+        //Comando com switch 
+        programa.ComandoSwitch('B');
+        //Contagem com o laço for 
+        programa.Contador(10);
+        //Contagem regressiva com o laço while 
+        programa.ContadorRegressivo(5);
+        string? valor_entrada = null;
         do
         {
-            Console.WriteLine("\nAperte enter para encerrar o console.");
-            entrada = Console.ReadKey().Key.ToString();
-        } while (entrada != "Enter");
+            Console.WriteLine("\nEnter para encerrar o console.");
+            valor_entrada = Console.ReadKey().Key.ToString();
+        } while (valor_entrada != "Enter");
     }
 
 }

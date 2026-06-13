@@ -11,15 +11,14 @@ namespace relatorio3
 
         public int Forca { get; set; }
 
-        public int Pontuacao { get; private set; }
-        //Propriedada calculada, se a vida for maior que zero, EstaVivo é true, se não é false
+        public int Pontos { get; private set; }
         public bool EstaVivo { get { return Vida > 0 ? true : false; } }
         public Jogador(string nome, int vida_inicial, int forca)
         {
             Nome = nome;
             Vida = vida_inicial;
             Forca = forca;
-            Pontuacao = 0;
+            Pontos = 0;
         }
 
         public string Atacar(Inimigo alvo)
@@ -40,8 +39,8 @@ namespace relatorio3
         }
         public void GanharPontos(int pontos)
         {
-            Pontuacao += pontos;
-            Console.WriteLine($"\nPontos do {Nome}: {Pontuacao}");
+            Pontos += pontos;
+            Console.WriteLine($"\n{Nome}: {Pontos}");
         }
     }
 }

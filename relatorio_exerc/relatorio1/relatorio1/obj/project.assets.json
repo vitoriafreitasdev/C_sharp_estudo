@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\estudos\\relatorio1\\relatorio1\\relatorio1.csproj",
+      "projectUniqueName": "C:\\c_sharp\\relatorio_exerc\\relatorio1\\relatorio1\\relatorio1.csproj",
       "projectName": "relatorio1",
-      "projectPath": "C:\\estudos\\relatorio1\\relatorio1\\relatorio1.csproj",
+      "projectPath": "C:\\c_sharp\\relatorio_exerc\\relatorio1\\relatorio1\\relatorio1.csproj",
       "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
-      "outputPath": "C:\\estudos\\relatorio1\\relatorio1\\obj\\",
+      "outputPath": "C:\\c_sharp\\relatorio_exerc\\relatorio1\\relatorio1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -74,7 +74,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

@@ -6,16 +6,13 @@ namespace relatorio3
     {
         static void Main(string[] args)
         {
-            // Criação do jogo
-            Jogo jogo = new Jogo();
-            // Execução do jogo
-            //jogo.Execucar();
-
+            // Inicialização do jogo
+            Game jogo = new Game();
+            jogo.Execucar();
             Aluno aluno = new Aluno();
-
-            string nome = "Paulo";
-            aluno.NomeAluno = nome;
-            aluno.MostrarAtributos();
+            string n = "Ana";
+            aluno.NomeAluno = n;
+            aluno.atributos();
         }
     }
 

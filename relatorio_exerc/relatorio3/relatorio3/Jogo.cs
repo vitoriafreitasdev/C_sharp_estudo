@@ -5,14 +5,14 @@ using System.Text;
 
 namespace relatorio3
 {
-    public class Jogo
+    public class Game
     {
         public void Execucar()
         {
-            Jogador jogador1 = new Jogador("Link", 130, 30);
-            Inimigo inimigo1 = new Inimigo("Slime", 120, 10, 15);
-            Inimigo inimigo2 = new Inimigo("Goblin", 110, 12, 12);
-            Inimigo inimigo3 = new Inimigo("Moblin", 130, 14, 12);
+            Jogador jogador1 = new Jogador("Kratos", 150, 30);
+            Inimigo inimigo1 = new Inimigo("Baldur", 110, 10, 15);
+            Inimigo inimigo2 = new Inimigo("Thor", 120, 12, 12);
+            Inimigo inimigo3 = new Inimigo("Odin", 130, 14, 12);
 
             // Lista de inimigos que o jogador enfrentará
             List<Inimigo> inimigos = new List<Inimigo> { inimigo1, inimigo2, inimigo3 };
@@ -36,28 +36,28 @@ namespace relatorio3
             Console.WriteLine("\nBatalha encerrada.");
 
             Console.WriteLine($"\nStatus do Jogador Finais: ");
-            Console.WriteLine($"\nVida: {jogador1.Vida} - Pontos {jogador1.Pontuacao}");
+            Console.WriteLine($"\nVida: {jogador1.Vida} - Pontos {jogador1.Pontos}");
 
         }
         public void Batalhar(Jogador jogador, Inimigo inimigo)
         {
-            Console.WriteLine("\n=== Batalha ===\n");
-            Console.WriteLine($"Entre {jogador.Nome} - {inimigo.Nome}");
+            Console.WriteLine("\n Batalha ");
+            Console.WriteLine($" {jogador.Nome} vs {inimigo.Nome}");
             Console.WriteLine($"\nStatus antes da batalha");
-            Console.WriteLine($"Jogador: {jogador.Nome} - Vida: {jogador.Vida} - Ataque: {jogador.Forca}");
-            Console.WriteLine($"Inimigo: {inimigo.Nome} - Vida: {inimigo.Vida} - Ataque: {inimigo.Forca}");
+            Console.WriteLine($"Jogador: {jogador.Nome} | Vida: {jogador.Vida} | Ataque: {jogador.Forca}");
+            Console.WriteLine($"Inimigo: {inimigo.Nome} | Vida: {inimigo.Vida} | Ataque: {inimigo.Forca}");
 
             int turno = 1;
             // Loop até alguns deles morrer.
             while (jogador.EstaVivo == true && inimigo.EstaVivo == true)
             {
-                Console.WriteLine($"\n --- Turno: {turno} --- \n");
+                Console.WriteLine($"\n  Turno: {turno}  \n");
                 string ataqueJogador = jogador.Atacar(inimigo);
                 string ataqueInimigo = inimigo.Atacar(jogador);
                 Console.WriteLine("Ataque Jogador: " + ataqueJogador);
                 Console.WriteLine("Ataque Inimigo: " + ataqueInimigo);
 
-                Console.WriteLine("\n--- Aperte ENTER para continuar ---\n");
+                Console.WriteLine("\n Aperte ENTER para continuar n");
                 string key = Console.ReadKey().Key.ToString().ToLower();
                 if (key != "enter") break;
                 turno += 1;

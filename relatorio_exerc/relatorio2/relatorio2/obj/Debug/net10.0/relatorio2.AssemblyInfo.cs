@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("relatorio2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e9399a7bab25434ed69200b59500f9a0d7fbd90")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a1c18097664462e3e9b6bf3becce7968810d6c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("relatorio2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("relatorio2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

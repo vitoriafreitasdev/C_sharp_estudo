@@ -11,23 +11,23 @@ namespace relatorio3
 
         public int Forca { get; set; }
 
-        public int PontosDeRecompensa { get; private set; }
+        public int Pontos { get; private set; }
 
         public bool EstaVivo { get { return Vida > 0 ? true : false; } }
 
-        public Inimigo(string nome, int vida_inicial, int forca, int pontosDeRecompensa)
+        public Inimigo(string nome, int vida, int forca, int pontosRec)
         {
             Nome = nome;
-            Vida = vida_inicial;
+            Vida = vida;
             Forca = forca;
-            PontosDeRecompensa = pontosDeRecompensa;
+            Pontos = pontosRec;
         }
 
         public string Atacar(Jogador alvo)
         {
-            //Ataque impedido, caso o jogador estiver sem vida ou o inimigo
-            if (Vida <= 0) return "\nAtaque do inimigo impedido, vida está zerada.";
-            if (alvo.Vida <= 0) return "\nAtaque impedido, alvo sem vida.";
+            //Caso vida do inimigo ou do jogador seja zero, o ataque é impedido
+            if (Vida <= 0) return "\nAtaque do inimigo impedido.";
+            if (alvo.Vida <= 0) return "\nAtaque impedido.";
             //Dano no alvo
             alvo.ReceberDano(Forca);
             return $"\nAtaque do {Nome} realizado.";
@@ -36,10 +36,10 @@ namespace relatorio3
         public string ReceberDano(int dano)
         {
             Vida -= dano;
-            //Se a vida ficar negativa, será mudada para zero
+            //Caso a vida ficar negativa, será mudada para zero
             if (Vida < 0) Vida = 0;
-            Console.WriteLine($"\nVida atual {Nome}: {Vida} \n");
-            return "Dano sofrido.";
+            Console.WriteLine($"\nNome: {Nome}, Vida: {Vida} \n");
+            return "Dano recebido.";
         }
         
     }

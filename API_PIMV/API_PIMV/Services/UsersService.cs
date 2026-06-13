@@ -1,13 +1,8 @@
 ﻿using API_PIMV.Data;
 using API_PIMV.Dtos;
+using API_PIMV.Helpers;
 using API_PIMV.Models;
-using Azure.Core;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Net.Http.Headers;
-using System.Security.Claims;
-using System.Text;
 using static BCrypt.Net.BCrypt;
 
 namespace API_PIMV.Services
@@ -86,6 +81,8 @@ namespace API_PIMV.Services
 
         public async Task<UserLoginResponse> LoginUser(UserLoginRequest user)
         {
+            var tokenHandler = new JwtSecurityTokenHandlerWrapper();
+
             var userFind = await context.Users
                 .Where(c => c.Email == user.Email)
                 .FirstOrDefaultAsync();
@@ -103,10 +100,11 @@ namespace API_PIMV.Services
                 Name = userFind.Name,
                 Age = userFind.Age,
                 Email = userFind.Email
-            }; 
+            };
 
-            var token = TokenAuth.GenerateToken(requestReturn);
+            var token = tokenHandler.GenerateJwtToken(userFind.Id, userFind.Email);
             requestReturn.Token = token;
+            
             return requestReturn;
 
         }

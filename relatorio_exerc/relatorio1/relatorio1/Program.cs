@@ -1,11 +1,15 @@
-﻿public record Produto
+﻿public record Prod
 {
     public int Id { get; init; }
     public string Nome { get; init; }
     public double Preco { get; init; }
 
 };
-public class Config
+public class Cliente
+{
+    public decimal Total { get; set; }
+}
+public class Configuracao
 {
     private string _tema;
     public string Tema
@@ -20,44 +24,41 @@ public class Config
     }
 
 }
-public class Cliente
-{
-    public decimal Total { get; set; }
-}
 namespace relatorio1
 {
     class Program
     {
         static void Main()
         {
-            //Etapa - 1: Imprimindo uma saldação na tela
-            Console.WriteLine("Olá, bom dia");
-            //Etapa - 2: Declarando variáveis tipos por valor
-            int idade = 19;
-            string nome = "Isaac";
-            Console.WriteLine($"Olá, meu nome é {nome} e tenho {idade} anos.");
-            //Etapa 3 - Nullabilidade
-            string? frase = null;
-            string exibir = frase ?? "Valor não atribuído";
-            Console.WriteLine(exibir);
-            frase ??= "O dia está ótimo";
-            Console.WriteLine(frase);
-            //Etapa 4 - switch como expressão
-            object? valor = 120;
-            string descricao = valor switch
+            //Imprimindo uma saldação na tela
+            Console.WriteLine("Olá, Tudo bem?");
+            //Declarando variáveis tipos por valor
+            int idade = 21;
+            string nome = "João";
+            Console.WriteLine($"Meu nome é {nome} e tenho {idade} anos.");
+            //Nullabilidade
+            string? texto = null;
+            string exibicao = texto ?? "Sem valor atribuído";
+            Console.WriteLine(exibicao);
+            //Caso o texto seja nulo, atribui um valor padrão
+            texto ??= "Hoje está um dia bonito";
+            Console.WriteLine(texto);
+            //switch como expressão
+            object? numero = 120;
+            string desc = numero switch
             {
-                null => "Valor nulo",
-                string => "Valor é uma string",
-                int x when x > 100 => "Valor inteiro maior que 100",
+                null => "Valor é nulo",
+                string => "Valor agregado é uma string",
+                int x when x > 150 => "Valor inteiro maior que 150",
                 _ => "Valor não encontrado"
             };
-            Console.WriteLine(descricao);
-            //Etapa 5 - Função local static
-            static decimal Calc(decimal preco, decimal valor = 0.12m) => preco * valor;
-            decimal resultado = Calc(100.2m);
-            Console.WriteLine(resultado);
-            //Etapa 6 - record
-            var p1 = new Produto
+            Console.WriteLine(desc);
+            //Função local static
+            static decimal calculo(decimal preco, decimal valor = 0.12m) => preco * valor;
+            decimal res = calculo(100.2m);
+            Console.WriteLine(res);
+            //record
+            var p1 = new Prod
             {
                 Id = 1,
                 Nome = "Celular",
@@ -66,13 +67,13 @@ namespace relatorio1
             var p2 = p1 with { Preco = 1300.00 };
             Console.WriteLine(p1);
             Console.WriteLine(p2);
-            //Etapa 7 - Classe com propriedade e o token contextual field
-            var newConfig = new Config();
-            newConfig.Tema = "Azul";
-            Console.WriteLine(newConfig.Tema);
-            //Etapa 8 - Classe Cliente e atribuição condicional com ?. no destino
+            //Classe com propriedade e o token contextual field
+            var novaConfiguracao = new Configuracao();
+            novaConfiguracao.Tema = "Vermelho";
+            Console.WriteLine(novaConfiguracao.Tema);
+            //Classe Cliente e atribuição condicional com ?. no destino
             Cliente? cliente = new Cliente();
-            cliente?.Total += 100.50m;
+            cliente?.Total += 120.50m;
             Console.WriteLine(cliente?.Total);
         }
     }

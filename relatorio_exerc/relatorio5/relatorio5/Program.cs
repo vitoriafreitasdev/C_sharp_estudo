@@ -1,6 +1,6 @@
 ﻿namespace relatorio5
 {
-    // Classe abstrata, que servirá de base para as outras
+    // Classe abstrata
     public abstract class Animal { 
         public string Name { get; set; }
         public Animal(string name)
@@ -9,20 +9,8 @@
         }
         public abstract void EmitirSom();
     }
-    //Classes que herdam da Animal
-    public class Cachorro : Animal
-    {
-        public string Name { get; set; }
-        //Construtor, base faz referencia ao construtor da classe base
-        public Cachorro(string name) : base(name)
-        {
-            Name = name;
-        }
-        public override void EmitirSom()
-        {
-            Console.WriteLine($"{Name}: Au au");
-        }
-    }
+    
+   
     public class Gato : Animal
     {
         public string Name { get; set; }
@@ -37,17 +25,31 @@
             Console.WriteLine($"{Name}: Miau");
         }
     }
+
+    public class Cachorro : Animal
+    {
+        public string Name { get; set; }
+        //Construtor faz referencia a outro construtor 
+        public Cachorro(string name) : base(name)
+        {
+            Name = name;
+        }
+        public override void EmitirSom()
+        {
+            Console.WriteLine($"{Name}: Au au");
+        }
+    }
     public class Program
     {
         static void Main()
         {
-            //Instancias da classes
-            Cachorro bred = new Cachorro("Bred");
-            Gato nala = new Gato("Nala");
-            //Lista com os objetos criados acima
-            List<Animal> animais = new List<Animal>{ bred, nala};
-            //impressão do som de cada animal criado
-            animais.ForEach(animal => animal.EmitirSom());
+            //Objetos criados a partir das classes Cachorro e Gato
+            Cachorro max = new Cachorro("Max");
+            Gato Snow = new Gato("Nala");
+            //Listas de animais criados a partir da classe abstrata Animal
+            List<Animal> bichos = new List<Animal>{ max, Snow };
+            //Emissão do som de cada animal usando o método EmitirSom() da classe abstrata Animal
+            bichos.ForEach(animal => animal.EmitirSom());
         }
     }
 }
