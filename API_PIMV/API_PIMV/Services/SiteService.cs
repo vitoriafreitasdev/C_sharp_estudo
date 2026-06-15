@@ -92,7 +92,6 @@ namespace API_PIMV.Services
             .Where(c => registeredUsersInEvent.Contains(c.Id))
             .Select(c => new UsersGetResponse
             {
-                Id = c.Id,
                 Name = c.Name,
                 Age = c.Age,
                 Email = c.Email

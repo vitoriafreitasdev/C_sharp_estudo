@@ -7,7 +7,7 @@ namespace API_PIMV.Services
     {
 		Task<List<EventsResponse>> GetEvents();
 		Task<EventsResponse?> GetEventById(int eventId);
-		Task<List<GetUserEventResponse?>> GetEventsRegisteredByUser(int userId);
+        Task<List<GetUserEventResponse>> GetEventsRegisteredByUser(int userId);
 		Task<Events> AddEvent(AddEventRequest eventObj);
 		Task<Events> EditEvent(Events events);
 		Task<bool> DeleteEvent(DeleteRegistEventRequest request);

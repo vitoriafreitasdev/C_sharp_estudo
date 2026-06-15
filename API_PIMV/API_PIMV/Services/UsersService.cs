@@ -2,6 +2,8 @@
 using API_PIMV.Dtos;
 using API_PIMV.Helpers;
 using API_PIMV.Models;
+using API_PIMV.Services;
+
 using Microsoft.EntityFrameworkCore;
 using static BCrypt.Net.BCrypt;
 
@@ -15,7 +17,6 @@ namespace API_PIMV.Services
 
             var users = await context.Users.Select(c => new UsersGetResponse
             {
-                Id = c.Id,
                 Name = c.Name,
                 Age = c.Age,
                 Email = c.Email
@@ -34,12 +35,16 @@ namespace API_PIMV.Services
             .Where(c => c.Id == id)
             .Select(c => new UsersGetResponse
             {
-                Id = c.Id,
                 Name = c.Name,
                 Age = c.Age,
                 Email = c.Email
             }).FirstOrDefaultAsync();
 
+            var eventService = new EventsServices(context);
+
+            var userEvents = eventService.GetEventsRegisteredByUser(id);
+            user.Events = userEvents.Result;
+            
             if (user == null) throw new Exception("Usuário não encontrado.");
 
             return user;

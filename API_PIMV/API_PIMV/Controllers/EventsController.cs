@@ -40,20 +40,20 @@ namespace API_PIMV.Controllers
             }
         }
 
-        [HttpGet("getEventByUser/{userId}")]
-        public async Task<ActionResult<List<GetUserEventResponse?>>> GetUserEvent(int userId)
-        {
-            try
-            {
-                var eventReturned = await service.GetEventsRegisteredByUser(userId);
+        //[HttpGet("getEventByUser/{userId}")]
+        //public async Task<ActionResult<List<GetUserEventResponse?>>> GetUserEvent(int userId)
+        //{
+        //    try
+        //    {
+        //        var eventReturned = await service.GetEventsRegisteredByUser(userId);
 
-                return Ok(eventReturned);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+        //        return Ok(eventReturned);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
 
         [HttpPost("AddEvent")]
         public async Task<ActionResult<Events>> AddingEvent(AddEventRequest eventObj)

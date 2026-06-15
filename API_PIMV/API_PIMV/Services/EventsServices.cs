@@ -42,7 +42,7 @@ namespace API_PIMV.Services
             return eventFind;
 
         }
-        public async Task<List<GetUserEventResponse?>> GetEventsRegisteredByUser(int userId)
+        public async Task<List<GetUserEventResponse>> GetEventsRegisteredByUser(int userId)
         {
             var events = await context.Events.Select(c => new Events
             {
@@ -68,7 +68,7 @@ namespace API_PIMV.Services
             })
             .ToList();
 
-            if (userEvents == null || userEvents.Count() == 0) throw new Exception("Evento não encontrado.");
+            if (userEvents == null || userEvents.Count() == 0) return null;
 
             return userEvents;
         }
