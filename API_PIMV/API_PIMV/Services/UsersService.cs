@@ -96,10 +96,7 @@ namespace API_PIMV.Services
      
             UserLoginResponse requestReturn = new UserLoginResponse()
             {
-                Id = userFind.Id,
-                Name = userFind.Name,
-                Age = userFind.Age,
-                Email = userFind.Email
+                Id = userFind.Id
             };
 
             var token = tokenHandler.GenerateJwtToken(userFind.Id, userFind.Email);
