@@ -1,9 +1,11 @@
 ﻿using API_PIMV.Classes;
 using API_PIMV.Dtos;
+using API_PIMV.Helpers;
 using API_PIMV.Models;
 using API_PIMV.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+
 namespace API_PIMV.Controllers
 {
     [Route("api/[controller]")]
@@ -75,6 +77,18 @@ namespace API_PIMV.Controllers
         {
             try
             {
+                var tokenHandler = new JwtSecurityTokenHandlerWrapper();
+
+                var token = Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+
+                // Validate the JWT and retrieve claims about the user.
+                var claimsPrincipal = tokenHandler.ValidateJwtToken(token);
+
+                // Check if the user is authenticated. If not, return an unauthorized response.
+                if (claimsPrincipal?.Identity?.IsAuthenticated != true)
+                {
+                    return Unauthorized("Token has expired.");
+                }
                 var eventEdit = await service.EditEvent(events);
 
                 return CreatedAtAction(nameof(GetEvent), new { id = eventEdit.Id }, eventEdit);

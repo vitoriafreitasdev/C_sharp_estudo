@@ -63,7 +63,7 @@ namespace API_PIMV.Controllers
         }
 
         [HttpGet("registeredUsersInEvent/{eventId}")]
-        public async Task<ActionResult<List<UsersGetResponse>>> getUsersRegisteredInEvent(int eventId)
+        public async Task<ActionResult<List<UserRegisteredEvent>>> getUsersRegisteredInEvent(int eventId)
         {
             try
             {

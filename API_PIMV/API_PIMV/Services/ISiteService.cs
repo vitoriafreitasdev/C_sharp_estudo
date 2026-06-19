@@ -8,7 +8,7 @@ namespace API_PIMV.Services
         Task<bool> AddComent(AddComentRequest comment);
         Task<List<Comments>> ShowComments(int eventId);
         Task<bool> RegisterToEvent(DeleteRegistEventRequest request);
-        Task<List<UsersGetResponse>> UsersReginterInTheEvent(int eventId);
+        Task<List<UserRegisteredEvent>> UsersReginterInTheEvent(int eventId);
     }
 }
 

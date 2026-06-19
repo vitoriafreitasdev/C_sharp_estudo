@@ -75,7 +75,7 @@ namespace API_PIMV.Services
             return true;
         }
 
-        public async Task<List<UsersGetResponse>> UsersReginterInTheEvent(int eventId)
+        public async Task<List<UserRegisteredEvent>> UsersReginterInTheEvent(int eventId)
         {
             var events = await context.Events.FindAsync(eventId);
 
@@ -90,8 +90,9 @@ namespace API_PIMV.Services
 
             var requestReturn = await context.Users
             .Where(c => registeredUsersInEvent.Contains(c.Id))
-            .Select(c => new UsersGetResponse
+            .Select(c => new UserRegisteredEvent
             {
+                Id = c.Id,
                 Name = c.Name,
                 Age = c.Age,
                 Email = c.Email

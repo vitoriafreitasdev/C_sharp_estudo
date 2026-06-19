@@ -37,8 +37,6 @@ namespace API_PIMV.Controllers
                
                 var token = Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
 
-                Console.WriteLine(token);
-
                 // Validate the JWT and retrieve claims about the user.
                 var claimsPrincipal = tokenHandler.ValidateJwtToken(token);
 

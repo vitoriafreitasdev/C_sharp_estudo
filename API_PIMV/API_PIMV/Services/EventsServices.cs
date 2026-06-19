@@ -78,7 +78,7 @@ namespace API_PIMV.Services
 
             var eventFind = await context.Events.Where(c => c.Key == eventObj.Key).FirstOrDefaultAsync();
 
-            if(eventFind != null) throw new Exception("Essa chave já existe.");
+            if(eventFind != null) throw new Exception("Chave inválida.");
 
             if (user == null) throw new Exception("Usuário não encontrado.");
 
@@ -112,7 +112,10 @@ namespace API_PIMV.Services
 
             if(eventFind.User_Id != events.User_Id) throw new Exception("Esse evento pode apenas ser editado pelo usuário que o criou.");
 
-            
+            var eventSameKey = await context.Events.Where(c => c.Key == events.Key).FirstOrDefaultAsync();
+
+            if (eventSameKey != null && eventSameKey.Id != eventFind.Id) throw new Exception("Chave inválida.");
+
             eventFind.Title = events.Title;
             eventFind.Description = events.Description;
             eventFind.Date = events.Date;
@@ -144,13 +147,18 @@ namespace API_PIMV.Services
         
         public async Task<Certificate> Certificate(CertificateRequest certificateBody)
         {
-            var user = await context.Users.FindAsync(certificateBody.userId);
+            
+            var user = await context.Users
+                .Where(c => c.Email == certificateBody.email)
+                .FirstOrDefaultAsync();
 
-            if (user == null) throw new Exception("Usuário não encontrado.");
+            if (user == null) throw new Exception("E-mail inválido.");
 
-            var eventFind = await context.Events.Where(c => c.Key == certificateBody.key).FirstAsync();
+            var eventFind = await context.Events
+                .Where(c => c.Key == certificateBody.key)
+                .FirstOrDefaultAsync(); 
 
-            if (eventFind == null) throw new Exception("Evento não encontrado.");
+            if (eventFind == null) throw new Exception("Chave inválida.");
 
             var certificate = new Certificate()
             {
