@@ -6,7 +6,7 @@ namespace API_PIMV.Services
 {
     public class SiteService(AppDbContext context) : ISiteService
     {
-        public async Task<bool> AddComent(AddComentRequest comment)
+        public async Task<Comments> AddComent(AddComentRequest comment)
         {
 
             var user = await context.Users.FindAsync(comment.userId);
@@ -28,12 +28,13 @@ namespace API_PIMV.Services
 
             await context.SaveChangesAsync();
 
-            return true;
+            return newComment;
 
         }
 
-        public async Task<List<Comments>> ShowComments(int eventId)
+        public async Task<List<CommentsRes>> ShowComments(int eventId)
         {
+            
             var comments = await context.Comments
             .Where(c => c.EventId == eventId)
             .Select(c => new Comments
@@ -45,12 +46,28 @@ namespace API_PIMV.Services
             })
             .ToListAsync();
 
-            if(comments == null || comments.Count() == 0)
+            List<CommentsRes> response = new List<CommentsRes>();
+        
+            foreach (var comment in comments)
+            {
+                var user = await context.Users.FindAsync(comment.UserId);
+                if (user != null)
+                {
+                    response.Add(new CommentsRes
+                    {
+                        Id = comment.Id,
+                        Commentary = comment.Commentary,
+                        UserName = user.Name
+                    });
+                }
+            }
+
+            if (response == null || response.Count() == 0)
             {
                 throw new Exception("Evento sem comentários.");
             }
 
-            return comments;
+            return response;
         }
         public async Task<bool> RegisterToEvent(DeleteRegistEventRequest request)
         {
@@ -61,6 +78,14 @@ namespace API_PIMV.Services
             var events = await context.Events.FindAsync(request.eventId);
 
             if (events == null) throw new Exception("Evento não registrado");
+
+            var registers = await context.RegisteredUsersInEvents
+            .Where(c => c.userId == request.userId && c.eventId == request.eventId)
+            .ToListAsync();
+
+            var alreadyRegisterde = registers.Exists(x => x.eventId == request.eventId && x.userId == request.userId);
+
+            if (alreadyRegisterde) throw new Exception("Já registrado.");
 
             RegisteredUsersInEvents register = new RegisteredUsersInEvents()
             {

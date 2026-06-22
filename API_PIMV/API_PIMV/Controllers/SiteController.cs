@@ -12,13 +12,13 @@ namespace API_PIMV.Controllers
     public class SiteController(ISiteService service) : Controller
     {
         [HttpPost("addComment")]
-        public async Task<ActionResult<bool>> AddingComments(AddComentRequest comment)
+        public async Task<ActionResult<Comments>> AddingComments(AddComentRequest comment)
         {
             try
             {
                 var requestReturn = await service.AddComent(comment);
 
-                if (requestReturn == true)
+                if (requestReturn != null)
                 {
                     return Ok(requestReturn);
                 }
@@ -32,7 +32,7 @@ namespace API_PIMV.Controllers
         }
 
         [HttpGet("comments/{eventId}")]
-        public async Task<ActionResult<List<Comments>>> ShowingEventComments(int eventId)
+        public async Task<ActionResult<List<CommentsRes>>> ShowingEventComments(int eventId)
         {
             try
             {

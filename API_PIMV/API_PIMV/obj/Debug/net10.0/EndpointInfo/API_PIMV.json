@@ -322,17 +322,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "boolean"
+                  "$ref": "#/components/schemas/Comments"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "boolean"
+                  "$ref": "#/components/schemas/Comments"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "boolean"
+                  "$ref": "#/components/schemas/Comments"
                 }
               }
             }
@@ -368,7 +368,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Comments"
+                    "$ref": "#/components/schemas/CommentsRes"
                   }
                 }
               },
@@ -376,7 +376,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Comments"
+                    "$ref": "#/components/schemas/CommentsRes"
                   }
                 }
               },
@@ -384,7 +384,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Comments"
+                    "$ref": "#/components/schemas/CommentsRes"
                   }
                 }
               }
@@ -786,6 +786,25 @@
               "string"
             ],
             "format": "int32"
+          }
+        }
+      },
+      "CommentsRes": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "commentary": {
+            "type": "string"
+          },
+          "userName": {
+            "type": "string"
           }
         }
       },
