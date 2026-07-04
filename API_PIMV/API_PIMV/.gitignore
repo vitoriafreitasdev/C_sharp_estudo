@@ -1,0 +1,3 @@
+# No arquivo .gitignore
+.env
+appsettings.json
