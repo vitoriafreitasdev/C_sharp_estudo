@@ -1,0 +1,42 @@
+Objetivo específico:
+	A partir da criação de uma empresa fictícia, os alunos deverão analisar cenários
+	organizacionais, identificar problemas operacionais, compreender necessidades
+	estratégicas e propor soluções tecnológicas inovadoras alinhadas às demandas
+	atuais do mercado.
+	Os alunos deverão estruturar uma
+	proposta completa para uma empresa privada, considerando aspectos técnicos,
+	funcionais, operacionais e organizacionais, bem como requisitos de segurança,
+	escalabilidade, desempenho, usabilidade e inovação tecnológica.
+
+Problema que iremos resolver no nosso PIM:
+	Decidimos que o segmento vai ser de móveis, como exemplo: Casas Bahia e outras
+	lojas desse segmento.
+	E o nosso problema a resolver vai ser a questão da contratação. A ideia é criar um
+	sistema próprio da empresa, que vai listar todas as vagas de emprego disponíveis. A
+	pessoa vai conseguir entrar no site, visualizar as vagas, clicar naquela que tiver
+	interesse e, a partir dali, enviar o próprio currículo. Depois, os recrutadores vão
+	conseguir visualizar todos os currículos de uma forma mais organizada.
+
+Desenvolvimento WEB com .NET
+	O aluno deverá desenvolver a estrutura web e backend da plataforma administrativa.
+	Tópicos obrigatórios: Construção de APIs REST utilizando ASP.NET Core;
+	Implementação de banco de dados com Entity Framework; o Desenvolvimento de
+	autenticação, autorização e segurança; o Estruturação de painel administrativo web
+	com arquitetura MVC.
+	Resultado esperado: Criação de uma plataforma web escalável, segura e integrada
+	aos serviços mobile
+
+Painel Administrativo:
+	Vai ter as seguintes funcionalidades: 
+		-Recrutador (id, nome, email, senha) 
+			vai porder: Adicionar, editar e remover vagas de emprego
+		-Visualizar currículos enviados pelos candidatos
+		-Visualizar os perfis dos candidatos -> colocar filtro (experiencia, capacidades tecnicas)
+
+Sistema para Contratação:
+	Vai ter as seguintes funcionalidades: 
+		-Registrar candidato (nome, email, senha, telefone, endereço, experiência profissional, formação acadêmica, habilidades, linkedin, portfolio)
+		-Logar
+			-Visualizar vagas de emprego disponíveis
+			-Enviar currículo para a vaga desejada
+			-Receber feedback sobre o status da candidatura (aceito, rejeitado, em análise)
