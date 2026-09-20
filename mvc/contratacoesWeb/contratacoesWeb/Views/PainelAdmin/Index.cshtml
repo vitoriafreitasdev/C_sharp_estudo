@@ -1,8 +1,31 @@
 ﻿
 
+<div class="Index-PainelAdmin">
 
-<div>
-	<form asp-action="Logar" asp-controller="PainelAdmin" method="post">
-		<button type="submit">Adicionar Recrutador Teste</button>
-	</form>
+    <h3>
+        Para fazer o login preencha o formulário abaixo e clique em "Log In"
+    </h3>
+
+    <div>
+        <p>@ViewBag.Mensagem</p>
+        <form asp-action="Logar" asp-controller="PainelAdmin" method="post">
+
+            <div class="form-group">
+                <label>Email</label>
+                <input name="email" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Senha</label>
+                <input name="senha" class="form-control" />
+            </div>
+
+            <button class="btn-painelAdmin" type="submit">
+                Log In
+            </button>
+
+        </form>
+        
+    </div>
+
 </div>

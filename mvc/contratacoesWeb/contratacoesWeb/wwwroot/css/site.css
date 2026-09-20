@@ -1,31 +1,113 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin: 0;
+    background-color: #CFD8D7;
+    color: #263535;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+/* =========================================
+   PAINEL ADMIN - LOGIN
+   ========================================= */
+
+.Index-PainelAdmin {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* aproximadamente 20% abaixo do topo */
+    padding-top: 20vh;
+    box-sizing: border-box;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+    /* Texto acima do formulário */
+    .Index-PainelAdmin h3 {
+        color: #307473;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 0 1.5rem 0;
+    }
+
+    /* Formulário */
+    .Index-PainelAdmin form {
+        width: 100%;
+        width: 30vw;
+        background-color: rgba(255, 255, 255, 0.55);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        box-sizing: border-box;
+    }
+
+    /* Cada campo */
+    .Index-PainelAdmin .form-group {
+        margin-bottom: 1.2rem;
+    }
+
+    /* Labels */
+    .Index-PainelAdmin label {
+        display: block;
+        margin-bottom: 0.4rem;
+        color: #307473;
+        font-weight: 600;
+    }
+
+    /* Inputs */
+    .Index-PainelAdmin .form-control {
+        width: 100%;
+        padding: 0.7rem 0.8rem;
+        border: 2px solid #307473;
+        border-radius: 6px;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+        /* Input quando selecionado */
+        .Index-PainelAdmin .form-control:focus {
+            border-color: #7353BA;
+            box-shadow: 0 0 0 3px rgba(115, 83, 186, 0.2);
+            outline: none;
+        }
+
+/* Botão */
+.btn-painelAdmin {
+    display: block;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #7353BA;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
 }
+
+    /* Hover */
+    .btn-painelAdmin:hover {
+        background-color: #6041a3;
+        transform: translateY(-1px);
+    }
+
+    /* Clique */
+    .btn-painelAdmin:active {
+        transform: translateY(0);
+    }

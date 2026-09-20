@@ -1,54 +1,72 @@
-﻿using contratacoesWeb.Models;
+﻿using contratacoesWeb.Dtos;
+using contratacoesWeb.Models;
 using contratacoesWeb.Services;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
+using System.ComponentModel.DataAnnotations;
 namespace contratacoesWeb.Controllers
 {
     public class PainelAdminController : Controller
     {
         private readonly IPainelAdminService _painelAdminService;
+        
 
         public PainelAdminController(IPainelAdminService painelAdminService)
         {
             _painelAdminService = painelAdminService;
         }
-
+        //fazer a parte de autenficação e autorização https://www.yogihosting.com/aspnet-core-identity-mongodb/#identity-role-mongodb
+        [HttpGet]
+        public IActionResult AbaAdmin()
+        {
+            return View();
+        }
         public IActionResult Index()
         {
             return View();
         }
-
         [HttpPost]
-        public async Task<IActionResult> Logar()
+        public async Task<IActionResult> Logar([Required][EmailAddress] string email, [Required] string senha)
         {
-            Recrutadores recrutadorAdd = new Recrutadores
+            Login login = new Login
             {
-                id = ObjectId.GenerateNewId().ToString(),
-                nome = "Julio Santos",
-                email = "julio.santos@gmail.com",
-                senha = "123456",
+                email = email,
+                senha = senha
             };
 
-            Recrutadores recrutadorAdd1 = new Recrutadores
+            var res = await _painelAdminService.LogarRecrutador(login);
+
+            if(res.sucesso == false)
             {
-                id = ObjectId.GenerateNewId().ToString(),
-                nome = "Marcelie Gabriela",
-                email = "marceliegabriela@gmail.com",
-                senha = "123456",
-            };
+                ViewBag.Mensagem = "Falha no login, verificar email ou senha";
+                return View("Index");
+            }
+
+            return RedirectToAction("AbaAdmin");
+        }
+        [HttpPost]
+        public async Task<IActionResult> AdicionarRecrutador()
+        {
+            if (ModelState.IsValid)
+            {
+                Recrutadores recrutadorAdd = new Recrutadores
+                {
+                    id = ObjectId.GenerateNewId().ToString(),
+                    nome = "teste",
+                    email = "teste@hotmail.com",
+                    senha = "dmin123",
+                };
 
 
-            Recrutadores recrutadorAdd2 = new Recrutadores
-            {
-                id = ObjectId.GenerateNewId().ToString(),
-                nome = "Vitor Almeida",
-                email = "vitorAlmeida@gmail.com",
-                senha = "123456",
-            };
-            await _painelAdminService.AdicionarRecrutador(recrutadorAdd);
-            await _painelAdminService.AdicionarRecrutador(recrutadorAdd1);
-            await _painelAdminService.AdicionarRecrutador(recrutadorAdd2);    
-            return RedirectToAction("Index");
+                RetornoObjeto res = await _painelAdminService.AdicionarRecrutador(recrutadorAdd);
+                if(res.sucesso == false)
+                {
+                    Console.WriteLine(res.mensagem);
+                }
+            
+                return RedirectToAction("Index");
+            }
+            return View();
         }
     }
 }

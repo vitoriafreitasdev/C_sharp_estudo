@@ -8,11 +8,24 @@
     ".NETCoreApp,Version=v10.0": {
       "contratacoesWeb/1.0.0": {
         "dependencies": {
+          "AspNetCore.Identity.MongoDbCore": "7.0.0",
           "MongoDB.Bson": "3.11.2",
           "MongoDB.Driver": "3.11.2"
         },
         "runtime": {
           "contratacoesWeb.dll": {}
+        }
+      },
+      "AspNetCore.Identity.MongoDbCore/7.0.0": {
+        "dependencies": {
+          "MongoDB.Driver": "3.11.2",
+          "MongoDbGenericRepository": "2.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/AspNetCore.Identity.MongoDbCore.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.0.0"
+          }
         }
       },
       "DnsClient/1.6.1": {
@@ -43,6 +56,17 @@
           "lib/net6.0/MongoDB.Driver.dll": {
             "assemblyVersion": "3.11.2.0",
             "fileVersion": "3.11.2.0"
+          }
+        }
+      },
+      "MongoDbGenericRepository/2.0.0": {
+        "dependencies": {
+          "MongoDB.Driver": "3.11.2"
+        },
+        "runtime": {
+          "lib/netstandard2.1/MongoDbGenericRepository.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
           }
         }
       },
@@ -78,6 +102,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AspNetCore.Identity.MongoDbCore/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-71WasZQtxkxqUSsDRqlyAHOvAroFSicKnoMGhuXxrnXSNhPQzaBAqvzi9HoQA2rmJUSfEAogY5WxDDio6Ne9NQ==",
+      "path": "aspnetcore.identity.mongodbcore/7.0.0",
+      "hashPath": "aspnetcore.identity.mongodbcore.7.0.0.nupkg.sha512"
+    },
     "DnsClient/1.6.1": {
       "type": "package",
       "serviceable": true,
@@ -98,6 +129,13 @@
       "sha512": "sha512-ih0sEiM9v6PtL5hReqLCupiWkxKk12E2wo0udybBnMpFhSSREjJ5FxUv3VyClfodhVODjF3Z3XrbXHPfL0NlVw==",
       "path": "mongodb.driver/3.11.2",
       "hashPath": "mongodb.driver.3.11.2.nupkg.sha512"
+    },
+    "MongoDbGenericRepository/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LtS89Ff5MPtmMs0fkFhboddo1mwwrnix+2NxFJjOtJkHhxYeun6bNnOcYRorAXlA2Fmymrxedjl4hadOoQYNvg==",
+      "path": "mongodbgenericrepository/2.0.0",
+      "hashPath": "mongodbgenericrepository.2.0.0.nupkg.sha512"
     },
     "SharpCompress/0.48.1": {
       "type": "package",

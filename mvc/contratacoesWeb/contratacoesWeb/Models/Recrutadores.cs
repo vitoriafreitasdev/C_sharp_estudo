@@ -2,10 +2,11 @@
 //Recrutadores
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using Microsoft.AspNetCore.Identity;
+using MongoDbGenericRepository.Attributes;
 
 namespace contratacoesWeb.Models
 {
+    [CollectionName("Recrutadores")]
     public class Recrutadores 
     {
         [BsonId]

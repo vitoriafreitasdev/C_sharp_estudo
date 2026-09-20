@@ -29,7 +29,6 @@ C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\rjsmcshtml.dswa
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\scopedcss\bundle\contratacoesWeb.styles.css
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\scopedcss\projectbundle\contratacoesWeb.bundle.scp.css
-C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\compressed\bvdb8rlqle-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\compressed\8h8w93372h-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\compressed\aistkst9ss-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\compressed\zt1egubnmk-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -105,3 +104,6 @@ C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\refint\contrata
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\contratacoesWeb.pdb
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\contratacoesWeb.genruntimeconfig.cache
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\ref\contratacoesWeb.dll
+C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\AspNetCore.Identity.MongoDbCore.dll
+C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\MongoDbGenericRepository.dll
+C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\compressed\bvdb8rlqle-{0}-awm7zk5szk-awm7zk5szk.gz

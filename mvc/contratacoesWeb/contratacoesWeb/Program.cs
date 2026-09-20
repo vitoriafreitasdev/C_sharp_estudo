@@ -1,10 +1,29 @@
 
+using contratacoesWeb.Data;
+using contratacoesWeb.Models;
 using contratacoesWeb.Services;
 using MongoDB.Driver;
 using System.Security.Authentication;
-using contratacoesWeb.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var mongoDbSettings = builder.Configuration
+    .GetSection("MongoDbSettings")
+    .Get<Configuracoes>();
+
+if (mongoDbSettings != null)
+{
+    builder.Services.AddIdentity<AplicacaoUser, Roles>()
+        .AddMongoDbStores<AplicacaoUser, Roles, Guid>(
+            mongoDbSettings.ConnectionString,
+            mongoDbSettings.DatabaseName
+        );
+}
+else
+{
+    Console.WriteLine("MongoDB settings are not configured properly.");
+    return;
+}
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
