@@ -1,0 +1,43 @@
+﻿<div>
+    <p>@ViewBag.Mensagem</p>
+    <form asp-action="AdicionarVagaPost" asp-controller="PainelAdmin" method="post">
+        <div class="form-group">
+            <label>Titulo</label>
+            <input name="titulo" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Descrição</label>
+            <textarea name="descricao" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Requisitos (Ex: Excel, Python, SqlServer)</label>
+            <input name="requisitos" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Localizacao</label>
+            <input placeholder="Estado" name="estado" class="form-control" />
+            <input placeholder="Cidade" name="cidade" class="form-control" />
+            <input placeholder="Bairro" name="bairro" class="form-control" />
+            <input placeholder="Rua" name="rua" class="form-control" />
+            <input placeholder="Cep" name="cep" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Modelo (Presencial, Remoto, Hibrido)</label>
+            <input name="modelo" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>
+                Tipo (Estagio, Trainee, Junior, Pleno, Senior)
+            </label>
+            <input name="tipo" class="form-control" />
+        </div>
+        <button class="btn-painelAdmin" type="submit">
+            Adicionar
+        </button>
+    </form>
+</div>
+

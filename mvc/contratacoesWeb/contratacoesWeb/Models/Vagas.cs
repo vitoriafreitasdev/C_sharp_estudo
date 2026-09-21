@@ -12,8 +12,8 @@ namespace contratacoesWeb.Models
         public string descricao { get; set; }
         public List<string> requisitos { get; set; }
         public Endereco localizacao { get; set; }
-        public Modelo modelo { get; set; }
-        public TipoVaga tipo { get; set; }
+        public string modelo { get; set; }
+        public string tipo { get; set; }
         public List<Candidatos>? candidatos { get; set; } = null;
     }
     public enum Modelo

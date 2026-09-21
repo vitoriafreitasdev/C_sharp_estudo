@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using System.Xml.Linq;
-
+using Microsoft.AspNetCore.Http;
 namespace contratacoesWeb.Services
 {
     public class PainelAdminService : IPainelAdminService
@@ -21,11 +21,16 @@ namespace contratacoesWeb.Services
         private readonly IMongoCollection<Candidatos> _candidatoCollection;
         private readonly IMongoCollection<Vagas> _vagaCollection;
 
-        public PainelAdminService(UserManager<AplicacaoUser> userManager, RoleManager<Roles> roleManager, SignInManager<AplicacaoUser> signInManager, BancoDeDados bancoDeDados)
+        private readonly IHttpContextAccessor httpContextAccessor;
+
+        public PainelAdminService(UserManager<AplicacaoUser> userManager, RoleManager<Roles> roleManager, 
+                                SignInManager<AplicacaoUser> signInManager, BancoDeDados bancoDeDados, 
+                                IHttpContextAccessor httpContextAccessor)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
             this.signInManager = signInManager;
+            this.httpContextAccessor = httpContextAccessor;
             _recrutadorCollection = bancoDeDados.RecrutadoresCollection;
             _candidatoCollection = bancoDeDados.CandidatosCollection;
             _vagaCollection = bancoDeDados.VagasCollection;
@@ -56,10 +61,43 @@ namespace contratacoesWeb.Services
             };
 
         }
-        
-        public Task<Vagas> AdicionarVaga(Vagas vaga){
-            throw new NotImplementedException();
+        public bool UsuarioEstaLogado()
+        {
+            var context = httpContextAccessor.HttpContext;
+            var logado = context?.User.Identity?.IsAuthenticated;
+            
+            if (logado == true)
+            {
+                return true;
+            }
+            return false;
         }
+        public async Task<RetornoObjeto> AdicionarVaga(Vagas vaga){
+            try
+            {
+                await _vagaCollection.InsertOneAsync(vaga);
+                return new RetornoObjeto
+                {
+                    mensagem = "Adicionado com sucesso.",
+                    sucesso = true
+                };
+            }
+            catch (Exception err)
+            {
+                return new RetornoObjeto
+                {
+                    mensagem = "Erro: " + err,
+                    sucesso = false
+                }
+                ;
+            }
+        }
+        public Task<List<Vagas>> VisualizarVagas()
+        {
+            throw new NotImplementedException();
+
+        }
+        
         public Task<Vagas> EditarVaga(string id, Vagas vaga){
             throw new NotImplementedException();
         }
@@ -141,9 +179,5 @@ namespace contratacoesWeb.Services
             }
         }
 
-        public Task<bool> LogarRecrutador(Recrutadores recrutador)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

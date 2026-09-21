@@ -38,6 +38,8 @@ builder.Services.AddSingleton<IMongoClient>(new MongoClient(configuracoes));
 
 builder.Services.AddScoped<BancoDeDados>();
 
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddScoped<IPainelAdminService, PainelAdminService>();
 
 var app = builder.Build();

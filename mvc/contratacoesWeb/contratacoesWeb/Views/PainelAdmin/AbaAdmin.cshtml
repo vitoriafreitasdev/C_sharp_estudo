@@ -1,4 +1,173 @@
-﻿
-<div>
-<h1> voce esta na aba de administração </h1>
+﻿@{
+    ViewData["Title"] = "AbaAdmin";
+}
+
+<div class="painel-admin">
+
+    <aside class="menu-admin">
+
+        <div class="menu-admin-conteudo">
+
+            <a asp-controller="PainelAdmin"
+               asp-action="AdicionarVaga"
+               class="btn-admin">
+                Adicionar vaga
+            </a>
+
+            <a asp-controller="PainelAdmin"
+               asp-action="AdicionarRecrutador"
+               class="btn-admin">
+                Adicionar recrutador
+            </a>
+
+            <a asp-controller="PainelAdmin"
+               asp-action="VisualizarVagas"
+               class="btn-admin">
+                Visualizar vagas
+            </a>
+
+        </div>
+
+    </aside>
+
+    <main class="conteudo-admin">
+
+        <div class="vagas-grid">
+
+            <div class="vaga-card">
+
+                <h3>Nome da Vaga</h3>
+
+                <div class="vaga-info">
+                    <p>
+                        <strong>Modelo:</strong>
+                        Presencial
+                    </p>
+
+                    <p>
+                        <strong>Tipo:</strong>
+                        CLT
+                    </p>
+                </div>
+
+                <div class="vaga-acoes">
+
+                    <a asp-controller="PainelAdmin"
+                       asp-action="DetalhesVaga"
+                       class="btn-vaga">
+                        Ver detalhes
+                    </a>
+
+                    <a asp-controller="PainelAdmin"
+                       asp-action="Candidatos"
+                       class="btn-vaga btn-candidatos">
+                        Candidatos
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="vaga-card">
+
+                <h3>Nome da Vaga</h3>
+
+                <div class="vaga-info">
+                    <p>
+                        <strong>Modelo:</strong>
+                        Híbrido
+                    </p>
+
+                    <p>
+                        <strong>Tipo:</strong>
+                        Estágio
+                    </p>
+                </div>
+
+                <div class="vaga-acoes">
+
+                    <a asp-controller="PainelAdmin"
+                       asp-action="DetalhesVaga"
+                       class="btn-vaga">
+                        Ver detalhes
+                    </a>
+
+                    <a asp-controller="PainelAdmin"
+                       asp-action="Candidatos"
+                       class="btn-vaga btn-candidatos">
+                        Candidatos
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="vaga-card">
+
+                <h3>Nome da Vaga</h3>
+
+                <div class="vaga-info">
+                    <p>
+                        <strong>Modelo:</strong>
+                        Remoto
+                    </p>
+
+                    <p>
+                        <strong>Tipo:</strong>
+                        PJ
+                    </p>
+                </div>
+
+                <div class="vaga-acoes">
+
+                    <a asp-controller="PainelAdmin"
+                       asp-action="DetalhesVaga"
+                       class="btn-vaga">
+                        Ver detalhes
+                    </a>
+
+                    <a asp-controller="PainelAdmin"
+                       asp-action="Candidatos"
+                       class="btn-vaga btn-candidatos">
+                        Candidatos
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="vaga-card">
+
+                <h3>Nome da Vaga</h3>
+
+                <div class="vaga-info">
+                    <p>
+                        <strong>Modelo:</strong>
+                        Presencial
+                    </p>
+
+                    <p>
+                        <strong>Tipo:</strong>
+                        CLT
+                    </p>
+
+                </div>
+
+                <div class="vaga-acoes">
+
+                    <a asp-controller="PainelAdmin"
+                       asp-action="DetalhesVaga"
+                       class="btn-vaga">
+                        Ver detalhes
+                    </a>
+
+                    <a asp-controller="PainelAdmin"
+                       asp-action="Candidatos"
+                       class="btn-vaga btn-candidatos">
+                        Candidatos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
 </div>

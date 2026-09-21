@@ -111,3 +111,240 @@ body {
     .btn-painelAdmin:active {
         transform: translateY(0);
     }
+
+/* =========================================
+   PAINEL ADMINISTRATIVO
+   ========================================= */
+
+.painel-admin {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    min-height: 650px;
+    margin: 40px auto;
+    background-color: #CFD8D7;
+    border: 5px solid #307473;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   MENU LATERAL
+   ========================================= */
+
+.menu-admin {
+    width: 24%;
+    background-color: #CFD8D7;
+    border-right: 4px solid #307473;
+    display: flex;
+    justify-content: center;
+}
+
+
+.menu-admin-conteudo {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding-top: 70px;
+}
+
+
+/* Botões do menu */
+
+.btn-admin {
+    width: 100%;
+    padding: 12px 8px;
+    background-color: #7353BA;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+
+    .btn-admin:hover {
+        background-color: #6041a3;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+   ========================================= */
+
+.conteudo-admin {
+    width: 76%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   GRID DAS VAGAS
+   ========================================= */
+
+.vagas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+
+/* =========================================
+   CARD DA VAGA
+   ========================================= */
+
+.vaga-card {
+    min-height: 190px;
+    background-color: white;
+    border: 2px solid #307473;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: 0.2s;
+}
+
+
+    .vaga-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 7px 15px rgba(0, 0, 0, 0.12);
+    }
+
+
+    /* =========================================
+   TÍTULO DA VAGA
+   ========================================= */
+
+    .vaga-card h3 {
+        margin: 0 0 15px 0;
+        color: #307473;
+        font-size: 1.15rem;
+        text-align: center;
+    }
+
+
+/* =========================================
+   INFORMAÇÕES DA VAGA
+   ========================================= */
+
+.vaga-info {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+
+    .vaga-info p {
+        margin: 5px 0;
+        font-size: 0.95rem;
+    }
+
+
+    .vaga-info strong {
+        color: #307473;
+    }
+
+
+/* =========================================
+   BOTÕES DA VAGA
+   ========================================= */
+
+.vaga-acoes {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+
+.btn-vaga {
+    flex: 1;
+    padding: 9px 5px;
+    background-color: #7353BA;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+
+    .btn-vaga:hover {
+        background-color: #6041a3;
+        color: white;
+    }
+
+
+/* =========================================
+   BOTÃO CANDIDATOS
+   ========================================= */
+
+.btn-candidatos {
+    background-color: #307473;
+}
+
+
+    .btn-candidatos:hover {
+        background-color: #245a59;
+    }
+
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .painel-admin {
+        width: 95%;
+        flex-direction: column;
+        margin: 20px auto;
+    }
+
+
+    .menu-admin {
+        width: 100%;
+        border-right: none;
+        border-bottom: 4px solid #307473;
+    }
+
+
+    .menu-admin-conteudo {
+        width: 90%;
+        padding: 20px 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .btn-admin {
+        width: auto;
+        flex: 1;
+        min-width: 130px;
+    }
+
+
+    .conteudo-admin {
+        width: 100%;
+        padding: 20px;
+    }
+
+
+    .vagas-grid {
+        grid-template-columns: 1fr;
+    }
+}

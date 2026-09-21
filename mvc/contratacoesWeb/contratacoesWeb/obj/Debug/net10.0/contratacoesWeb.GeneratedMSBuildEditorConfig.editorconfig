@@ -35,6 +35,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpbmVsQWRtaW5cQWJhQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/c_sharp/mvc/contratacoesWeb/contratacoesWeb/Views/PainelAdmin/AdicionarRecrutador.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpbmVsQWRtaW5cQWRpY2lvbmFyUmVjcnV0YWRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/c_sharp/mvc/contratacoesWeb/contratacoesWeb/Views/PainelAdmin/AdicionarVaga.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpbmVsQWRtaW5cQWRpY2lvbmFyVmFnYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/c_sharp/mvc/contratacoesWeb/contratacoesWeb/Views/PainelAdmin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpbmVsQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
