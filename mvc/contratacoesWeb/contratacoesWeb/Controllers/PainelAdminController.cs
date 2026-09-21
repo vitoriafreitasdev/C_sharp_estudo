@@ -52,9 +52,9 @@ namespace contratacoesWeb.Controllers
                 Recrutadores recrutadorAdd = new Recrutadores
                 {
                     id = ObjectId.GenerateNewId().ToString(),
-                    nome = "teste",
-                    email = "teste@hotmail.com",
-                    senha = "dmin123",
+                    nome = "Anna Julia",
+                    email = "anna@hotmail.com",
+                    senha = "Admin@123",
                 };
 
 

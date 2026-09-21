@@ -97,13 +97,23 @@ namespace contratacoesWeb.Services
         {
             try
             {
+                string nomeNormalizado = recrutador.nome.Replace(" ", "");
+               
                 AplicacaoUser appUser = new AplicacaoUser
                 {
-                    UserName = recrutador.nome,
+                    UserName = nomeNormalizado,
                     Email = recrutador.email
                 };
                 IdentityResult result = await userManager.CreateAsync(appUser, recrutador.senha);
 
+                if(result.Succeeded == false)
+                {
+                    return new RetornoObjeto
+                    {
+                        mensagem = "Falha ao criar recrutador: " + string.Join(", ", result.Errors.Select(e => e.Description)),
+                        sucesso = false
+                    };
+                }
                 await userManager.AddToRoleAsync(appUser, "Recrutador");
 
                 if (!result.Succeeded)
@@ -127,7 +137,7 @@ namespace contratacoesWeb.Services
             }
             catch (Exception err)
             {
-                throw new Exception("Erro ao adicionar recrutador: " + err.Message);
+                throw new Exception("Erro ao tentar inserir recrutador: " + err);
             }
         }
 
