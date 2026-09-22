@@ -1,9 +1,11 @@
-
 using contratacoesWeb.Data;
+using contratacoesWeb.Endpoints;
 using contratacoesWeb.Models;
 using contratacoesWeb.Services;
 using MongoDB.Driver;
+using Scalar.AspNetCore;
 using System.Security.Authentication;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,6 +44,8 @@ builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddScoped<IPainelAdminService, PainelAdminService>();
 
+builder.Services.AddOpenApi();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -51,6 +55,13 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+app.MapOpenApi();
+
+app.MapScalarApiReference(options =>
+{
+    options
+        .WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient);
+});
 
 app.UseHttpsRedirection();
 app.UseRouting();
@@ -64,6 +75,9 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=PainelAdmin}/{action=Index}/{id?}")
     .WithStaticAssets();
+
+
+app.MapApiEndpoints();
 
 app.Run();
 

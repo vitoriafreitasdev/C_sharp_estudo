@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "ContainingType": "contratacoesWeb.Endpoints.ApiEnpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapApiEndpoints\u003Eb__0_0",
+    "RelativePath": "api/Vagas/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "PegarTodasVagas"
+  },
+  {
+    "ContainingType": "contratacoesWeb.Endpoints.ApiEnpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapApiEndpoints\u003Eb__0_1",
+    "RelativePath": "api/Vagas/vagas/{id}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "PegarVaga"
+  }
+]

@@ -40,3 +40,14 @@ Sistema para Contratação:
 			-Visualizar vagas de emprego disponíveis
 			-Enviar currículo para a vaga desejada
 			-Receber feedback sobre o status da candidatura (aceito, rejeitado, em análise)
+
+Minimul API funcionalidades:
+
+-Buscar vagas 
+-Buscar vaga especifica por id
+
+-Registrar candidatos
+-Buscar candidato por id
+
+-Editar dados do candidatos
+-Deletar candidato

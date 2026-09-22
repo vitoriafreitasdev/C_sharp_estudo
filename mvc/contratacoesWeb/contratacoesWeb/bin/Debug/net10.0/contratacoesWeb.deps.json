@@ -9,8 +9,11 @@
       "contratacoesWeb/1.0.0": {
         "dependencies": {
           "AspNetCore.Identity.MongoDbCore": "7.0.0",
+          "Microsoft.AspNetCore.OpenApi": "10.0.12",
+          "Microsoft.EntityFrameworkCore": "10.0.12",
           "MongoDB.Bson": "3.11.2",
-          "MongoDB.Driver": "3.11.2"
+          "MongoDB.Driver": "3.11.2",
+          "Scalar.AspNetCore.Microsoft": "2.17.8"
         },
         "runtime": {
           "contratacoesWeb.dll": {}
@@ -33,6 +36,44 @@
           "lib/net5.0/DnsClient.dll": {
             "assemblyVersion": "1.6.1.0",
             "fileVersion": "1.6.1.0"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi/10.0.12": {
+        "dependencies": {
+          "Microsoft.OpenApi": "2.12.0"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "assemblyVersion": "10.0.12.0",
+            "fileVersion": "10.0.1226.42308"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore/10.0.12": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "10.0.12"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.EntityFrameworkCore.dll": {
+            "assemblyVersion": "10.0.12.0",
+            "fileVersion": "10.0.1226.42308"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Abstractions/10.0.12": {
+        "runtime": {
+          "lib/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "assemblyVersion": "10.0.12.0",
+            "fileVersion": "10.0.1226.42308"
+          }
+        }
+      },
+      "Microsoft.OpenApi/2.12.0": {
+        "runtime": {
+          "lib/net8.0/Microsoft.OpenApi.dll": {
+            "assemblyVersion": "2.12.0.0",
+            "fileVersion": "2.12.0.0"
           }
         }
       },
@@ -67,6 +108,27 @@
           "lib/netstandard2.1/MongoDbGenericRepository.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "Scalar.AspNetCore/2.17.8": {
+        "runtime": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "assemblyVersion": "2.17.8.0",
+            "fileVersion": "2.17.8.0"
+          }
+        }
+      },
+      "Scalar.AspNetCore.Microsoft/2.17.8": {
+        "dependencies": {
+          "Microsoft.AspNetCore.OpenApi": "10.0.12",
+          "Microsoft.OpenApi": "2.12.0",
+          "Scalar.AspNetCore": "2.17.8"
+        },
+        "runtime": {
+          "lib/net10.0/Scalar.AspNetCore.Microsoft.dll": {
+            "assemblyVersion": "2.17.8.0",
+            "fileVersion": "2.17.8.0"
           }
         }
       },
@@ -116,6 +178,34 @@
       "path": "dnsclient/1.6.1",
       "hashPath": "dnsclient.1.6.1.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.OpenApi/10.0.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7RnQ/UKn+kK3JDLmTpW+vVqNErWthGPAVAy1aIiBzv4ucQ6g9NFvOJUuT0PHcpvcJxGVxctMxj6t+NESWMrgHQ==",
+      "path": "microsoft.aspnetcore.openapi/10.0.12",
+      "hashPath": "microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore/10.0.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-e7OrVN8U5yr4kuwdTHWBHGVQIVsGfMkAr0Ej1/BnrS989Q0XBVANpIzNZ2bc1GvMZ0/XwMt5InTnmKskxGy99Q==",
+      "path": "microsoft.entityframeworkcore/10.0.12",
+      "hashPath": "microsoft.entityframeworkcore.10.0.12.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Abstractions/10.0.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kDrux7T6C3V/YYYe2LXr7x6AEsVyq5Y2YoTE9er1SwbDtap3z1g8RgxNh5eKQVyB4T+DKvBBJ4Ezd/VZzJQJZg==",
+      "path": "microsoft.entityframeworkcore.abstractions/10.0.12",
+      "hashPath": "microsoft.entityframeworkcore.abstractions.10.0.12.nupkg.sha512"
+    },
+    "Microsoft.OpenApi/2.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0xB/be+f6qYOhvQPUrVsLrau+fkowYv6gt9RIkajMhwT7sZnqtcA797yW3bS5kgSje+AQW4xZgyLnW641YFioQ==",
+      "path": "microsoft.openapi/2.12.0",
+      "hashPath": "microsoft.openapi.2.12.0.nupkg.sha512"
+    },
     "MongoDB.Bson/3.11.2": {
       "type": "package",
       "serviceable": true,
@@ -136,6 +226,20 @@
       "sha512": "sha512-LtS89Ff5MPtmMs0fkFhboddo1mwwrnix+2NxFJjOtJkHhxYeun6bNnOcYRorAXlA2Fmymrxedjl4hadOoQYNvg==",
       "path": "mongodbgenericrepository/2.0.0",
       "hashPath": "mongodbgenericrepository.2.0.0.nupkg.sha512"
+    },
+    "Scalar.AspNetCore/2.17.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KboA9Qm60RiikrXQ28EzUSevksNDPhRV/jTAGEw9vbo8VAw+JFXdNm9vlOtFHwptp5yCHHaupTCIMCbT/EbiiQ==",
+      "path": "scalar.aspnetcore/2.17.8",
+      "hashPath": "scalar.aspnetcore.2.17.8.nupkg.sha512"
+    },
+    "Scalar.AspNetCore.Microsoft/2.17.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TLCjDoub6Og0q/gJwvUsxRunl8UvedOGZ5/B5mzy35kqt2N/ef/6k8bOw6DPDtmiNY/HjxCpsihm1oPQMDpgTQ==",
+      "path": "scalar.aspnetcore.microsoft/2.17.8",
+      "hashPath": "scalar.aspnetcore.microsoft.2.17.8.nupkg.sha512"
     },
     "SharpCompress/0.48.1": {
       "type": "package",

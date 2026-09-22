@@ -1,0 +1,58 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "contratacoesWeb | v1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://localhost:7205"
+    },
+    {
+      "url": "http://localhost:5151"
+    }
+  ],
+  "paths": {
+    "/api/Vagas": {
+      "get": {
+        "tags": [
+          "contratacoesWeb"
+        ],
+        "operationId": "PegarTodasVagas",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Vagas/vagas/{id}": {
+      "get": {
+        "tags": [
+          "contratacoesWeb"
+        ],
+        "operationId": "PegarVaga",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "contratacoesWeb"
+    }
+  ]
+}

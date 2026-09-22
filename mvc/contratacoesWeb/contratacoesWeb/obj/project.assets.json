@@ -32,6 +32,77 @@
           }
         }
       },
+      "Microsoft.AspNetCore.OpenApi/10.0.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.OpenApi": "[2.12.0, 3.0.0)"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "build": {
+          "build/Microsoft.AspNetCore.OpenApi.targets": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore/10.0.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "10.0.12",
+          "Microsoft.EntityFrameworkCore.Analyzers": "10.0.12"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net10.0/Microsoft.EntityFrameworkCore.props": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Abstractions/10.0.12": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Analyzers/10.0.12": {
+        "type": "package"
+      },
+      "Microsoft.OpenApi/2.12.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "MongoDB.Bson/3.11.2": {
         "type": "package",
         "compile": {
@@ -80,6 +151,43 @@
             "related": ".xml"
           }
         }
+      },
+      "Scalar.AspNetCore/2.17.8": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Scalar.AspNetCore.Microsoft/2.17.8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.OpenApi": "10.0.0",
+          "Microsoft.OpenApi": "2.7.5",
+          "Scalar.AspNetCore": "2.17.8"
+        },
+        "compile": {
+          "lib/net10.0/Scalar.AspNetCore.Microsoft.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Scalar.AspNetCore.Microsoft.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "SharpCompress/0.48.1": {
         "type": "package",
@@ -154,6 +262,87 @@
         "lib/netstandard2.1/DnsClient.xml"
       ]
     },
+    "Microsoft.AspNetCore.OpenApi/10.0.12": {
+      "sha512": "7RnQ/UKn+kK3JDLmTpW+vVqNErWthGPAVAy1aIiBzv4ucQ6g9NFvOJUuT0PHcpvcJxGVxctMxj6t+NESWMrgHQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.openapi/10.0.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/cs/Microsoft.AspNetCore.OpenApi.SourceGenerators.dll",
+        "build/Microsoft.AspNetCore.OpenApi.targets",
+        "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll",
+        "lib/net10.0/Microsoft.AspNetCore.OpenApi.xml",
+        "microsoft.aspnetcore.openapi.10.0.12.nupkg.sha512",
+        "microsoft.aspnetcore.openapi.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore/10.0.12": {
+      "sha512": "e7OrVN8U5yr4kuwdTHWBHGVQIVsGfMkAr0Ej1/BnrS989Q0XBVANpIzNZ2bc1GvMZ0/XwMt5InTnmKskxGy99Q==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore/10.0.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "buildTransitive/net10.0/Microsoft.EntityFrameworkCore.props",
+        "lib/net10.0/Microsoft.EntityFrameworkCore.dll",
+        "lib/net10.0/Microsoft.EntityFrameworkCore.xml",
+        "microsoft.entityframeworkcore.10.0.12.nupkg.sha512",
+        "microsoft.entityframeworkcore.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Abstractions/10.0.12": {
+      "sha512": "kDrux7T6C3V/YYYe2LXr7x6AEsVyq5Y2YoTE9er1SwbDtap3z1g8RgxNh5eKQVyB4T+DKvBBJ4Ezd/VZzJQJZg==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.abstractions/10.0.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "lib/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
+        "lib/net10.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
+        "microsoft.entityframeworkcore.abstractions.10.0.12.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Analyzers/10.0.12": {
+      "sha512": "Kd4o2oO1A6dfKxjz5LS16QyLtpCFTUiFWwmBABETAXRsSImBdRdWeKjSgbbRhAMiV3a3/nWr95ZtzClT4uaADQ==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.analyzers/10.0.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
+        "docs/PACKAGE.md",
+        "microsoft.entityframeworkcore.analyzers.10.0.12.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.OpenApi/2.12.0": {
+      "sha512": "0xB/be+f6qYOhvQPUrVsLrau+fkowYv6gt9RIkajMhwT7sZnqtcA797yW3bS5kgSje+AQW4xZgyLnW641YFioQ==",
+      "type": "package",
+      "path": "microsoft.openapi/2.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net8.0/Microsoft.OpenApi.dll",
+        "lib/net8.0/Microsoft.OpenApi.pdb",
+        "lib/net8.0/Microsoft.OpenApi.xml",
+        "lib/netstandard2.0/Microsoft.OpenApi.dll",
+        "lib/netstandard2.0/Microsoft.OpenApi.pdb",
+        "lib/netstandard2.0/Microsoft.OpenApi.xml",
+        "microsoft.openapi.2.12.0.nupkg.sha512",
+        "microsoft.openapi.nuspec"
+      ]
+    },
     "MongoDB.Bson/3.11.2": {
       "sha512": "KU/swasyhcoi4NoxiY06/zRYCayH128s6Ye9Cm0yCXfyx5mAsnEv2wM+5Hg3iaBiw28we4t6n95Bk6EyrTQx5w==",
       "type": "package",
@@ -208,6 +397,42 @@
         "lib/netstandard2.1/MongoDbGenericRepository.xml",
         "mongodbgenericrepository.2.0.0.nupkg.sha512",
         "mongodbgenericrepository.nuspec"
+      ]
+    },
+    "Scalar.AspNetCore/2.17.8": {
+      "sha512": "KboA9Qm60RiikrXQ28EzUSevksNDPhRV/jTAGEw9vbo8VAw+JFXdNm9vlOtFHwptp5yCHHaupTCIMCbT/EbiiQ==",
+      "type": "package",
+      "path": "scalar.aspnetcore/2.17.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/Scalar.AspNetCore.dll",
+        "lib/net10.0/Scalar.AspNetCore.xml",
+        "lib/net8.0/Scalar.AspNetCore.dll",
+        "lib/net8.0/Scalar.AspNetCore.xml",
+        "lib/net9.0/Scalar.AspNetCore.dll",
+        "lib/net9.0/Scalar.AspNetCore.xml",
+        "scalar.aspnetcore.2.17.8.nupkg.sha512",
+        "scalar.aspnetcore.nuspec"
+      ]
+    },
+    "Scalar.AspNetCore.Microsoft/2.17.8": {
+      "sha512": "TLCjDoub6Og0q/gJwvUsxRunl8UvedOGZ5/B5mzy35kqt2N/ef/6k8bOw6DPDtmiNY/HjxCpsihm1oPQMDpgTQ==",
+      "type": "package",
+      "path": "scalar.aspnetcore.microsoft/2.17.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/Scalar.AspNetCore.Microsoft.dll",
+        "lib/net10.0/Scalar.AspNetCore.Microsoft.xml",
+        "lib/net9.0/Scalar.AspNetCore.Microsoft.dll",
+        "lib/net9.0/Scalar.AspNetCore.Microsoft.xml",
+        "scalar.aspnetcore.microsoft.2.17.8.nupkg.sha512",
+        "scalar.aspnetcore.microsoft.nuspec"
       ]
     },
     "SharpCompress/0.48.1": {
@@ -272,8 +497,11 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "AspNetCore.Identity.MongoDbCore >= 7.0.0",
+      "Microsoft.AspNetCore.OpenApi >= 10.0.12",
+      "Microsoft.EntityFrameworkCore >= 10.0.12",
       "MongoDB.Bson >= 3.11.2",
-      "MongoDB.Driver >= 3.11.2"
+      "MongoDB.Driver >= 3.11.2",
+      "Scalar.AspNetCore.Microsoft >= 2.17.8"
     ]
   },
   "packageFolders": {
@@ -332,6 +560,14 @@
             "target": "Package",
             "version": "[7.0.0, )"
           },
+          "Microsoft.AspNetCore.OpenApi": {
+            "target": "Package",
+            "version": "[10.0.12, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[10.0.12, )"
+          },
           "MongoDB.Bson": {
             "target": "Package",
             "version": "[3.11.2, )"
@@ -339,6 +575,10 @@
           "MongoDB.Driver": {
             "target": "Package",
             "version": "[3.11.2, )"
+          },
+          "Scalar.AspNetCore.Microsoft": {
+            "target": "Package",
+            "version": "[2.17.8, )"
           }
         },
         "imports": [
