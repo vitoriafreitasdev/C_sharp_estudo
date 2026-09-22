@@ -106,4 +106,4 @@ C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\contratacoesWeb
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\ref\contratacoesWeb.dll
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\AspNetCore.Identity.MongoDbCore.dll
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\MongoDbGenericRepository.dll
-C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\compressed\bvdb8rlqle-{0}-3bsyp332km-3bsyp332km.gz
+C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\compressed\bvdb8rlqle-{0}-jypx8qxqm4-jypx8qxqm4.gz

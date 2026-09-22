@@ -17,22 +17,26 @@ namespace contratacoesWeb.Controllers
         {
             _painelAdminService = painelAdminService;
         }
-        //fazer a parte de autenficação e autorização https://www.yogihosting.com/aspnet-core-identity-mongodb/#identity-role-mongodb
+       
         [Authorize(Roles = "Recrutador")]
         [HttpGet]
-        public IActionResult AbaAdmin()
+        public async Task<IActionResult> AbaAdmin()
         {
             var estaLogado = _painelAdminService.UsuarioEstaLogado();
             if (estaLogado == false)
             {
                 return RedirectToAction("Index");
             }
-            return View();
+
+            List<Vagas> vagas = await _painelAdminService.VisualizarVagas();
+
+            return View(vagas);
         }
         public IActionResult Index()
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Logar([Required][EmailAddress] string email, [Required] string senha)
         {
@@ -52,28 +56,41 @@ namespace contratacoesWeb.Controllers
 
             return RedirectToAction("AbaAdmin");
         }
+
         [Authorize(Roles = "Recrutador")]
         [HttpGet]
         public async Task<IActionResult> AdicionarRecrutador()
         {
             return View();
         }
+
+        [Authorize(Roles = "Recrutador")]
+        [HttpGet]
+        public async Task<IActionResult> DetalhesVaga(string id)
+        {
+            Vagas vaga = await _painelAdminService.VisualizarVagaPorId(id);
+            return View(vaga);
+        }
+
         [Authorize(Roles = "Recrutador")]
         [HttpGet]
         public async Task<IActionResult> AdicionarVaga()
         {
             return View();
         }
-        [HttpGet]
-        public async Task<IActionResult> VisualizarVagas()
-        {
-            return View("AbaAdmin");
-        }
+        
         [HttpPost]
         public async Task<IActionResult> AdicionarVagaPost([Required] string titulo, [Required] string descricao,
             [Required] string requisitos, [Required] string estado, [Required] string cidade, [Required] string bairro,
             [Required] string rua, [Required] string cep, [Required] string modelo, [Required] string tipo)
         {
+            bool estaSeparadoPorVirgula = requisitos.Contains(",");
+            if (estaSeparadoPorVirgula == false)
+            {
+                ViewBag.Mensagem = "Os requisistos precisam ser separados por vírgula.";
+                return View("AdicionarVaga");
+            }
+
             List<string> requisistosList = requisitos.Replace(" ", "").Split(",").ToList();
             
             Vagas vaga = new Vagas
@@ -103,7 +120,7 @@ namespace contratacoesWeb.Controllers
             {
                 ViewBag.Mensagem = "Adicionado com sucesso.";
             }
-            return View("AdicionarRecrutador");
+            return View("AdicionarVaga");
         }
         [HttpPost]
         public async Task<IActionResult> AdicionarRecrutadorPost([Required] string nome, [Required][EmailAddress] string email, 

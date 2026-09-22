@@ -1,0 +1,73 @@
+﻿@model contratacoesWeb.Models.Vagas
+
+<div class="detalhes-vaga">
+    <div class="vaga-header">
+
+        <h2>@Model.titulo</h2>
+
+        <div class="vaga-resumo">
+            <span>
+                <strong>Modelo:</strong>
+                @Model.modelo
+            </span>
+            <span>
+                <strong>Tipo:</strong>
+                @Model.tipo
+            </span>
+        </div>
+    </div>
+    <div class="vaga-conteudo">
+        <section class="vaga-section">
+
+            <h3>Requisitos da vaga</h3>
+
+            <div class="requisitos-lista">
+
+                @foreach (string requisito in Model.requisitos)
+                {
+                    <div class="requisito">
+                        <span class="requisito-marcador">✓</span>
+
+                        <p>@requisito</p>
+                    </div>
+                }
+            </div>
+        </section>
+        <section class="vaga-section">
+            <h3>Localização</h3>
+            <div class="localizacao">
+                <div class="localizacao-item">
+                    <strong>Estado</strong>
+                    <p>@Model.localizacao.estado</p>
+                </div>
+
+                <div class="localizacao-item">
+                    <strong>Cidade</strong>
+                    <p>@Model.localizacao.cidade</p>
+                </div>
+
+                <div class="localizacao-item">
+                    <strong>Bairro</strong>
+                    <p>@Model.localizacao.bairro</p>
+                </div>
+
+                <div class="localizacao-item">
+                    <strong>Rua</strong>
+                    <p>@Model.localizacao.rua</p>
+                </div>
+
+                <div class="localizacao-item">
+                    <strong>CEP</strong>
+                    <p>@Model.localizacao.cep</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="vaga-acoes-detalhes">
+        <a asp-controller="PainelAdmin"
+           asp-action="AbaAdmin"
+           class="btn-voltar">
+            Voltar
+        </a>
+    </div>
+</div>

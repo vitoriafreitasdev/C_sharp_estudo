@@ -68,3 +68,4 @@ app.MapControllerRoute(
 app.Run();
 
 //https://medium.com/c-sharp-programming/implementing-mongodb-with-net-bbedcbb0caf4
+//https://www.yogihosting.com/aspnet-core-identity-mongodb/#identity-role-mongodb

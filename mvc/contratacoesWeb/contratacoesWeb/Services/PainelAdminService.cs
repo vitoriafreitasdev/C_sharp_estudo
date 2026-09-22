@@ -92,24 +92,29 @@ namespace contratacoesWeb.Services
                 ;
             }
         }
-        public Task<List<Vagas>> VisualizarVagas()
+        public async Task<List<Vagas>> VisualizarVagas()
         {
-            throw new NotImplementedException();
+            try
+            {
+                List<Vagas> vagas = await _vagaCollection.Find(Builders<Vagas>.Filter.Empty).ToListAsync();
+                return vagas;
+            }
+            catch(Exception err)
+            {
+                throw new Exception("Erro: " + err);
+            }
 
         }
-        
-        public Task<Vagas> EditarVaga(string id, Vagas vaga){
-            throw new NotImplementedException();
-        }
-        public Task<Vagas> RemoverVaga(string id){
-            throw new NotImplementedException();
+
+        public async Task<Vagas> VisualizarVagaPorId(string id)
+        {
+            Vagas vaga = await _vagaCollection.Find(Builders<Vagas>.Filter.Eq((p) => p.id, id)).FirstOrDefaultAsync();
+            return vaga;
         }
         public Task<List<Candidatos>> VisualizarCandidatos(){
             throw new NotImplementedException();
         }
-        public Task<Candidatos> VisualizarPerfilCandidato(string id, string? filtro = null){
-            throw new NotImplementedException();
-        }
+        
         public async Task<RetornoObjeto> CriarRole()
         {
             IdentityResult result = await roleManager.CreateAsync(new Roles() { Name = "Candidato" });
