@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "86yprF1HxN8=",
+  "dgSpecHash": "0e2su5/D0cw=",
   "success": true,
   "projectFilePath": "C:\\c_sharp\\mvc\\contratacoesWeb\\contratacoesWeb\\contratacoesWeb.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\vitor\\.nuget\\packages\\microsoft.openapi\\2.12.0\\microsoft.openapi.2.12.0.nupkg.sha512",
     "C:\\Users\\vitor\\.nuget\\packages\\mongodb.bson\\3.11.2\\mongodb.bson.3.11.2.nupkg.sha512",
     "C:\\Users\\vitor\\.nuget\\packages\\mongodb.driver\\3.11.2\\mongodb.driver.3.11.2.nupkg.sha512",
+    "C:\\Users\\vitor\\.nuget\\packages\\mongodb.entityframeworkcore\\10.0.4\\mongodb.entityframeworkcore.10.0.4.nupkg.sha512",
     "C:\\Users\\vitor\\.nuget\\packages\\mongodbgenericrepository\\2.0.0\\mongodbgenericrepository.2.0.0.nupkg.sha512",
     "C:\\Users\\vitor\\.nuget\\packages\\scalar.aspnetcore\\2.17.8\\scalar.aspnetcore.2.17.8.nupkg.sha512",
     "C:\\Users\\vitor\\.nuget\\packages\\scalar.aspnetcore.microsoft\\2.17.8\\scalar.aspnetcore.microsoft.2.17.8.nupkg.sha512",

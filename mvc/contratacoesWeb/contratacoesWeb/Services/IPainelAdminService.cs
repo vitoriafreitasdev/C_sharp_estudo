@@ -1,6 +1,7 @@
 ﻿using contratacoesWeb.Data;
 using contratacoesWeb.Dtos;
 using contratacoesWeb.Models;
+using MongoDB.Bson;
 namespace contratacoesWeb.Services
 {
     public interface IPainelAdminService
@@ -9,7 +10,7 @@ namespace contratacoesWeb.Services
         public bool UsuarioEstaLogado();
         public Task<RetornoObjeto> AdicionarVaga(Vagas vaga);
         public Task<List<Vagas>> VisualizarVagas();
-        public Task<Vagas> VisualizarVagaPorId(string id);
+        public Task<Vagas?> VisualizarVagaPorId(ObjectId id);
         public Task<List<Candidatos>> VisualizarCandidatos();
         public Task<RetornoObjeto> CriarRole();
         public Task<RetornoObjeto> AdicionarRecrutador(Recrutadores recrutador);

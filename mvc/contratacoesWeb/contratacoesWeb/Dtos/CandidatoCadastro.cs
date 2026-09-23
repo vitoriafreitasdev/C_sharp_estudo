@@ -1,12 +1,9 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-using Microsoft.AspNetCore.Identity;
+﻿using contratacoesWeb.Models;
 
-namespace contratacoesWeb.Models
+namespace contratacoesWeb.Dtos
 {
-    public class Candidatos 
+    public class CandidatoCadastro
     {
-        public ObjectId id { get; set; }
         public string nome { get; set; }
         public string email { get; set; }
         public string senha { get; set; }
@@ -19,5 +16,3 @@ namespace contratacoesWeb.Models
         public string? portfolio { get; set; }
     }
 }
-
-//(nome, email, senha, telefone, endereço, experiência profissional, formação acadêmica, habilidades, linkedin, portfolio)

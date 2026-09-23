@@ -72,6 +72,10 @@
               "target": "Package",
               "version": "[3.11.2, )"
             },
+            "MongoDB.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[10.0.4, )"
+            },
             "Scalar.AspNetCore.Microsoft": {
               "target": "Package",
               "version": "[2.17.8, )"

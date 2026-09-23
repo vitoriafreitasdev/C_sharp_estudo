@@ -13,7 +13,38 @@
     }
   ],
   "paths": {
-    "/api/Vagas": {
+    "/vagas/{id}/adicionarcandidato": {
+      "put": {
+        "tags": [
+          "contratacoesWeb"
+        ],
+        "operationId": "AdicionandoCandidatoNaVaga",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "candidatoId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api": {
       "get": {
         "tags": [
           "contratacoesWeb"
@@ -26,7 +57,7 @@
         }
       }
     },
-    "/api/Vagas/vagas/{id}": {
+    "/api/vagas/{id}": {
       "get": {
         "tags": [
           "contratacoesWeb"
@@ -45,6 +76,125 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/candidatos/registrar": {
+      "post": {
+        "tags": [
+          "contratacoesWeb"
+        ],
+        "operationId": "CadastrarCandidato",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidatoCadastro"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/candidatos/{id}": {
+      "get": {
+        "tags": [
+          "contratacoesWeb"
+        ],
+        "operationId": "BuscarCandidato",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CandidatoCadastro": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "senha": {
+            "type": "string"
+          },
+          "telefone": {
+            "type": "string"
+          },
+          "endereco": {
+            "$ref": "#/components/schemas/Endereco"
+          },
+          "anosExperiencia": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "formacaoAcademica": {
+            "type": "string"
+          },
+          "habilidades": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "linkedin": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "portfolio": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "Endereco": {
+        "type": "object",
+        "properties": {
+          "estado": {
+            "type": "string"
+          },
+          "cidade": {
+            "type": "string"
+          },
+          "bairro": {
+            "type": "string"
+          },
+          "rua": {
+            "type": "string"
+          },
+          "cep": {
+            "type": "string"
           }
         }
       }

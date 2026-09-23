@@ -66,9 +66,9 @@ namespace contratacoesWeb.Controllers
 
         [Authorize(Roles = "Recrutador")]
         [HttpGet]
-        public async Task<IActionResult> DetalhesVaga(string id)
+        public async Task<IActionResult> DetalhesVaga(ObjectId id)
         {
-            Vagas vaga = await _painelAdminService.VisualizarVagaPorId(id);
+            Vagas? vaga = await _painelAdminService.VisualizarVagaPorId(id);
             return View(vaga);
         }
 
@@ -129,7 +129,7 @@ namespace contratacoesWeb.Controllers
             
             Recrutadores recrutadorAdd = new Recrutadores
             {
-                id = ObjectId.GenerateNewId().ToString(),
+                id = ObjectId.GenerateNewId(),
                 nome = nome,
                 email = email,
                 senha = senha,

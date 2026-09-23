@@ -136,6 +136,23 @@
           }
         }
       },
+      "MongoDB.EntityFrameworkCore/10.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "10.0.11",
+          "MongoDB.Driver": "3.11.2"
+        },
+        "compile": {
+          "lib/net10.0/MongoDB.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/MongoDB.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "MongoDbGenericRepository/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -381,6 +398,23 @@
         "packageIcon.png"
       ]
     },
+    "MongoDB.EntityFrameworkCore/10.0.4": {
+      "sha512": "cRey26mebQ1qjgR4dIn35FkAiVNp4I5TBltSFtUO8flUAaoEH3JzwoEJsrI6jbNxZ1dPUDyPEKc/EZzlXDcwPg==",
+      "type": "package",
+      "path": "mongodb.entityframeworkcore/10.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "BREAKING-CHANGES.md",
+        "LICENSE.md",
+        "README.md",
+        "lib/net10.0/MongoDB.EntityFrameworkCore.dll",
+        "lib/net10.0/MongoDB.EntityFrameworkCore.xml",
+        "mongodb.entityframeworkcore.10.0.4.nupkg.sha512",
+        "mongodb.entityframeworkcore.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "MongoDbGenericRepository/2.0.0": {
       "sha512": "LtS89Ff5MPtmMs0fkFhboddo1mwwrnix+2NxFJjOtJkHhxYeun6bNnOcYRorAXlA2Fmymrxedjl4hadOoQYNvg==",
       "type": "package",
@@ -501,6 +535,7 @@
       "Microsoft.EntityFrameworkCore >= 10.0.12",
       "MongoDB.Bson >= 3.11.2",
       "MongoDB.Driver >= 3.11.2",
+      "MongoDB.EntityFrameworkCore >= 10.0.4",
       "Scalar.AspNetCore.Microsoft >= 2.17.8"
     ]
   },
@@ -575,6 +610,10 @@
           "MongoDB.Driver": {
             "target": "Package",
             "version": "[3.11.2, )"
+          },
+          "MongoDB.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[10.0.4, )"
           },
           "Scalar.AspNetCore.Microsoft": {
             "target": "Package",

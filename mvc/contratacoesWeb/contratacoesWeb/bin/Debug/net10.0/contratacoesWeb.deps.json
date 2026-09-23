@@ -13,6 +13,7 @@
           "Microsoft.EntityFrameworkCore": "10.0.12",
           "MongoDB.Bson": "3.11.2",
           "MongoDB.Driver": "3.11.2",
+          "MongoDB.EntityFrameworkCore": "10.0.4",
           "Scalar.AspNetCore.Microsoft": "2.17.8"
         },
         "runtime": {
@@ -97,6 +98,18 @@
           "lib/net6.0/MongoDB.Driver.dll": {
             "assemblyVersion": "3.11.2.0",
             "fileVersion": "3.11.2.0"
+          }
+        }
+      },
+      "MongoDB.EntityFrameworkCore/10.0.4": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "10.0.12",
+          "MongoDB.Driver": "3.11.2"
+        },
+        "runtime": {
+          "lib/net10.0/MongoDB.EntityFrameworkCore.dll": {
+            "assemblyVersion": "10.0.4.0",
+            "fileVersion": "10.0.4.0"
           }
         }
       },
@@ -219,6 +232,13 @@
       "sha512": "sha512-ih0sEiM9v6PtL5hReqLCupiWkxKk12E2wo0udybBnMpFhSSREjJ5FxUv3VyClfodhVODjF3Z3XrbXHPfL0NlVw==",
       "path": "mongodb.driver/3.11.2",
       "hashPath": "mongodb.driver.3.11.2.nupkg.sha512"
+    },
+    "MongoDB.EntityFrameworkCore/10.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cRey26mebQ1qjgR4dIn35FkAiVNp4I5TBltSFtUO8flUAaoEH3JzwoEJsrI6jbNxZ1dPUDyPEKc/EZzlXDcwPg==",
+      "path": "mongodb.entityframeworkcore/10.0.4",
+      "hashPath": "mongodb.entityframeworkcore.10.0.4.nupkg.sha512"
     },
     "MongoDbGenericRepository/2.0.0": {
       "type": "package",

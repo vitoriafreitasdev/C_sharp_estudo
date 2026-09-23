@@ -114,3 +114,4 @@ C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\Microsoft.OpenA
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\Scalar.AspNetCore.dll
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\Scalar.AspNetCore.Microsoft.dll
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\contratacoesWeb.MvcApplicationPartsAssemblyInfo.cs
+C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\MongoDB.EntityFrameworkCore.dll

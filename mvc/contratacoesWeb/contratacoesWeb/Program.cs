@@ -2,9 +2,8 @@ using contratacoesWeb.Data;
 using contratacoesWeb.Endpoints;
 using contratacoesWeb.Models;
 using contratacoesWeb.Services;
-using MongoDB.Driver;
+using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
-using System.Security.Authentication;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +19,11 @@ if (mongoDbSettings != null)
             mongoDbSettings.ConnectionString,
             mongoDbSettings.DatabaseName
         );
+
+    builder.Services.AddDbContext<AplicacaoDbContext>(options =>
+    {
+        options.UseMongoDB(mongoDbSettings.ConnectionString, mongoDbSettings.DatabaseName);
+    });
 }
 else
 {
@@ -29,16 +33,6 @@ else
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
-var configuracaoString = builder.Configuration.GetValue<string>("MongoDbSettings:ConnectionString");
-
-var configuracoes = MongoClientSettings.FromUrl(new MongoUrl(configuracaoString));
-
-configuracoes.SslSettings = new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
-
-builder.Services.AddSingleton<IMongoClient>(new MongoClient(configuracoes));
-
-builder.Services.AddScoped<BancoDeDados>();
 
 builder.Services.AddHttpContextAccessor();
 

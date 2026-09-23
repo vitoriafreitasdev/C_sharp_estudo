@@ -2,7 +2,7 @@
   {
     "ContainingType": "contratacoesWeb.Endpoints.ApiEnpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapApiEndpoints\u003Eb__0_0",
-    "RelativePath": "api/Vagas/",
+    "RelativePath": "api/",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
@@ -18,15 +18,61 @@
   },
   {
     "ContainingType": "contratacoesWeb.Endpoints.ApiEnpoints\u002B\u003C\u003Ec",
-    "Method": "\u003CMapApiEndpoints\u003Eb__0_1",
-    "RelativePath": "api/Vagas/vagas/{id}",
+    "Method": "\u003CMapApiEndpoints\u003Eb__0_3",
+    "RelativePath": "api/candidatos/{id}",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.String",
+        "Type": "MongoDB.Bson.ObjectId",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "BuscarCandidato"
+  },
+  {
+    "ContainingType": "contratacoesWeb.Endpoints.ApiEnpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapApiEndpoints\u003Eb__0_2",
+    "RelativePath": "api/candidatos/registrar",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "candidatoDados",
+        "Type": "contratacoesWeb.Dtos.CandidatoCadastro",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "CadastrarCandidato"
+  },
+  {
+    "ContainingType": "contratacoesWeb.Endpoints.ApiEnpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapApiEndpoints\u003Eb__0_1",
+    "RelativePath": "api/vagas/{id}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "MongoDB.Bson.ObjectId",
         "IsRequired": true
       }
     ],
@@ -38,5 +84,33 @@
       }
     ],
     "EndpointName": "PegarVaga"
+  },
+  {
+    "ContainingType": "contratacoesWeb.Endpoints.ApiEnpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapApiEndpoints\u003Eb__0_4",
+    "RelativePath": "vagas/{id}/adicionarcandidato",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "MongoDB.Bson.ObjectId",
+        "IsRequired": true
+      },
+      {
+        "Name": "candidatoId",
+        "Type": "MongoDB.Bson.ObjectId",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "AdicionandoCandidatoNaVaga"
   }
 ]

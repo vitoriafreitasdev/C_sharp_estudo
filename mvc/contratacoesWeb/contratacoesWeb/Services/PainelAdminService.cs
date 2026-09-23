@@ -3,12 +3,10 @@
 using contratacoesWeb.Data;
 using contratacoesWeb.Dtos;
 using contratacoesWeb.Models;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MongoDB.Bson;
 using MongoDB.Driver;
-using System.Xml.Linq;
-using Microsoft.AspNetCore.Http;
 namespace contratacoesWeb.Services
 {
     public class PainelAdminService : IPainelAdminService
@@ -17,23 +15,20 @@ namespace contratacoesWeb.Services
         private UserManager<AplicacaoUser> userManager;
         private RoleManager<Roles> roleManager;
         private SignInManager<AplicacaoUser> signInManager;
-        private readonly IMongoCollection<Recrutadores> _recrutadorCollection;
-        private readonly IMongoCollection<Candidatos> _candidatoCollection;
-        private readonly IMongoCollection<Vagas> _vagaCollection;
 
         private readonly IHttpContextAccessor httpContextAccessor;
 
+        private readonly AplicacaoDbContext _context;
+
         public PainelAdminService(UserManager<AplicacaoUser> userManager, RoleManager<Roles> roleManager, 
-                                SignInManager<AplicacaoUser> signInManager, BancoDeDados bancoDeDados, 
-                                IHttpContextAccessor httpContextAccessor)
+                                SignInManager<AplicacaoUser> signInManager, IHttpContextAccessor httpContextAccessor,
+                                AplicacaoDbContext context)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
             this.signInManager = signInManager;
             this.httpContextAccessor = httpContextAccessor;
-            _recrutadorCollection = bancoDeDados.RecrutadoresCollection;
-            _candidatoCollection = bancoDeDados.CandidatosCollection;
-            _vagaCollection = bancoDeDados.VagasCollection;
+            _context = context;
         }
 
         // Login, interação com as vagas (Adição, Edição, Remoção) e outras ações.
@@ -75,7 +70,9 @@ namespace contratacoesWeb.Services
         public async Task<RetornoObjeto> AdicionarVaga(Vagas vaga){
             try
             {
-                await _vagaCollection.InsertOneAsync(vaga);
+                await _context.Vagas.AddAsync(vaga);
+                await _context.SaveChangesAsync();
+
                 return new RetornoObjeto
                 {
                     mensagem = "Adicionado com sucesso.",
@@ -96,7 +93,7 @@ namespace contratacoesWeb.Services
         {
             try
             {
-                List<Vagas> vagas = await _vagaCollection.Find(Builders<Vagas>.Filter.Empty).ToListAsync();
+                List<Vagas> vagas = await _context.Vagas.ToListAsync();
                 return vagas;
             }
             catch(Exception err)
@@ -106,9 +103,9 @@ namespace contratacoesWeb.Services
 
         }
 
-        public async Task<Vagas> VisualizarVagaPorId(string id)
+        public async Task<Vagas?> VisualizarVagaPorId(ObjectId id)
         {
-            Vagas vaga = await _vagaCollection.Find(Builders<Vagas>.Filter.Eq((p) => p.id, id)).FirstOrDefaultAsync();
+            Vagas? vaga = await _context.Vagas.FirstOrDefaultAsync(c => c.id == id);
             return vaga;
         }
         public Task<List<Candidatos>> VisualizarCandidatos(){
@@ -140,6 +137,15 @@ namespace contratacoesWeb.Services
         {
             try
             {
+                Recrutadores? recrutadorExiste = await _context.Recrutadores.FirstOrDefaultAsync(r => r.email == recrutador.email);
+                if (recrutadorExiste != null)
+                {
+                    return new RetornoObjeto
+                    {
+                        mensagem = "Recrutador já existe no sistema.",
+                        sucesso = false
+                    }; 
+                }
                 string nomeNormalizado = recrutador.nome.Replace(" ", "");
                
                 AplicacaoUser appUser = new AplicacaoUser
@@ -170,7 +176,9 @@ namespace contratacoesWeb.Services
 
                 var senhaCripto = new SenhaHash().CriptografarRecrutadorSenha(recrutador);
                 recrutador.senha = senhaCripto;
-                await _recrutadorCollection.InsertOneAsync(recrutador);
+
+                await _context.Recrutadores.AddAsync(recrutador);
+                await _context.SaveChangesAsync();
 
                 return new RetornoObjeto
                 {
