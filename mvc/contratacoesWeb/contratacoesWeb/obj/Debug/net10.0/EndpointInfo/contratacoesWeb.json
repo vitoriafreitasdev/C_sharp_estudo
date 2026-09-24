@@ -13,12 +13,111 @@
     }
   ],
   "paths": {
-    "/vagas/{id}/adicionarcandidato": {
+    "/api/vagas": {
+      "get": {
+        "tags": [
+          "contratacoesWeb"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/vagas/{id}": {
+      "get": {
+        "tags": [
+          "contratacoesWeb"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/candidatos/registrar": {
+      "post": {
+        "tags": [
+          "contratacoesWeb"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CandidatoCadastro"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/candidatos/logar": {
+      "post": {
+        "tags": [
+          "contratacoesWeb"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginCandidato"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/candidatos/{id}": {
+      "get": {
+        "tags": [
+          "contratacoesWeb"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/vagas/{id}/adicionarcandidato": {
       "put": {
         "tags": [
           "contratacoesWeb"
         ],
-        "operationId": "AdicionandoCandidatoNaVaga",
         "parameters": [
           {
             "name": "id",
@@ -44,71 +143,11 @@
         }
       }
     },
-    "/api": {
-      "get": {
+    "/api/deletarCandidato/{id}": {
+      "delete": {
         "tags": [
           "contratacoesWeb"
         ],
-        "operationId": "PegarTodasVagas",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/vagas/{id}": {
-      "get": {
-        "tags": [
-          "contratacoesWeb"
-        ],
-        "operationId": "PegarVaga",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/candidatos/registrar": {
-      "post": {
-        "tags": [
-          "contratacoesWeb"
-        ],
-        "operationId": "CadastrarCandidato",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CandidatoCadastro"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/candidatos/{id}": {
-      "get": {
-        "tags": [
-          "contratacoesWeb"
-        ],
-        "operationId": "BuscarCandidato",
         "parameters": [
           {
             "name": "id",
@@ -194,6 +233,17 @@
             "type": "string"
           },
           "cep": {
+            "type": "string"
+          }
+        }
+      },
+      "LoginCandidato": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "senha": {
             "type": "string"
           }
         }

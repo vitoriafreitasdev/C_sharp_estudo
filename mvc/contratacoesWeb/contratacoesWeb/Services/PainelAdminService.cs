@@ -38,7 +38,7 @@ namespace contratacoesWeb.Services
             
             if (usuario != null && dados.senha != null)
             {
-                Microsoft.AspNetCore.Identity.SignInResult result = await signInManager.PasswordSignInAsync(usuario, dados.senha, false, false);
+                SignInResult result = await signInManager.PasswordSignInAsync(usuario, dados.senha, false, false);
                 if (result.Succeeded)
                 {
                     return new RetornoObjeto
@@ -61,10 +61,8 @@ namespace contratacoesWeb.Services
             var context = httpContextAccessor.HttpContext;
             var logado = context?.User.Identity?.IsAuthenticated;
             
-            if (logado == true)
-            {
-                return true;
-            }
+            if (logado == true) return true;
+           
             return false;
         }
         public async Task<RetornoObjeto> AdicionarVaga(Vagas vaga){
@@ -155,7 +153,7 @@ namespace contratacoesWeb.Services
                 };
                 IdentityResult result = await userManager.CreateAsync(appUser, recrutador.senha);
 
-                if(result.Succeeded == false)
+                if(!result.Succeeded)
                 {
                     return new RetornoObjeto
                     {
@@ -163,9 +161,9 @@ namespace contratacoesWeb.Services
                         sucesso = false
                     };
                 }
-                await userManager.AddToRoleAsync(appUser, "Recrutador");
+                IdentityResult result2 = await userManager.AddToRoleAsync(appUser, "Recrutador");
 
-                if (!result.Succeeded)
+                if (!result2.Succeeded)
                 {
                     return new RetornoObjeto
                     {

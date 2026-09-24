@@ -78,7 +78,8 @@ namespace contratacoesWeb.Controllers
         {
             return View();
         }
-        
+
+        [Authorize(Roles = "Recrutador")]
         [HttpPost]
         public async Task<IActionResult> AdicionarVagaPost([Required] string titulo, [Required] string descricao,
             [Required] string requisitos, [Required] string estado, [Required] string cidade, [Required] string bairro,
@@ -122,6 +123,8 @@ namespace contratacoesWeb.Controllers
             }
             return View("AdicionarVaga");
         }
+
+        [Authorize(Roles = "Recrutador")]
         [HttpPost]
         public async Task<IActionResult> AdicionarRecrutadorPost([Required] string nome, [Required][EmailAddress] string email, 
             [Required] string senha)
