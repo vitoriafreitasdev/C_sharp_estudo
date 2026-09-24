@@ -1,0 +1,90 @@
+﻿@model contratacoesWeb.Models.Candidatos
+
+<div class="perfil-candidato">
+    @if(Model != null)
+    {
+        <div class="perfil-header">
+            <h1>@Model.nome</h1>
+            <p>Perfil do candidato</p>
+        </div>
+        <section class="perfil-section">
+            <h2>Dados Pessoais</h2>
+            <div class="dados-grid">
+                <div class="dado-item">
+                    <strong>Email</strong>
+                    <p>@Model.email</p>
+                </div>
+                <div class="dado-item">
+                    <strong>Telefone</strong>
+                    <p>@Model.telefone</p>
+                </div>
+            </div>
+        </section>
+        <section class="perfil-section">
+            <h2>Endereço</h2>
+            <div class="dados-grid">
+                <div class="dado-item">
+                    <strong>Estado</strong>
+                    <p>@Model.endereco.estado</p>
+                </div>
+                <div class="dado-item">
+                    <strong>Cidade</strong>
+                    <p>@Model.endereco.cidade</p>
+                </div>
+            </div>
+        </section>
+        <section class="perfil-section">
+            <h2>Experiência e Formação</h2>
+            <div class="dados-grid">
+                <div class="dado-item">
+                    <strong>Anos de experiência</strong>
+                    <p>@Model.anosExperiencia</p>
+                </div>
+                <div class="dado-item">
+                    <strong>Formação acadêmica</strong>
+                    <p>@Model.formacaoAcademica</p>
+                </div>
+            </div>
+        </section>
+        <section class="perfil-section">
+            <h2>Habilidades</h2>
+            <div class="habilidades-perfil">
+                @foreach (string hab in Model.habilidades)
+                {
+                    <span class="habilidade">
+                        @hab
+                    </span>
+                }
+            </div>
+        </section>
+        @if (Model.linkedin != null || Model.portfolio != null)
+        {
+            <section class="perfil-section">
+                <h2>Links profissionais</h2>
+                <div class="links-profissionais">
+                    @if (Model.linkedin != null)
+                    {
+                        <a href="@Model.linkedin"
+                           target="_blank"
+                           class="link-profissional">
+                            LinkedIn
+                        </a>
+                    }
+                    @if (Model.portfolio != null)
+                    {
+                        <a href="@Model.portfolio"
+                           target="_blank"
+                           class="link-profissional">
+                            Portfólio
+                        </a>
+                    }
+                </div>
+
+            </section>
+        }
+    }
+    else
+    {
+        <h3>Usuário não encontrado.</h3>
+    }
+</div>

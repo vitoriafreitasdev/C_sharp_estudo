@@ -106,7 +106,6 @@ C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\contratacoesWeb
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\ref\contratacoesWeb.dll
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\AspNetCore.Identity.MongoDbCore.dll
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\MongoDbGenericRepository.dll
-C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\compressed\bvdb8rlqle-{0}-jypx8qxqm4-jypx8qxqm4.gz
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -115,3 +114,4 @@ C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\Scalar.AspNetCo
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\Scalar.AspNetCore.Microsoft.dll
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\contratacoesWeb.MvcApplicationPartsAssemblyInfo.cs
 C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\bin\Debug\net10.0\MongoDB.EntityFrameworkCore.dll
+C:\c_sharp\mvc\contratacoesWeb\contratacoesWeb\obj\Debug\net10.0\compressed\bvdb8rlqle-{0}-lx55xces2j-lx55xces2j.gz

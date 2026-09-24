@@ -74,6 +74,22 @@ namespace contratacoesWeb.Controllers
 
         [Authorize(Roles = "Recrutador")]
         [HttpGet]
+        public async Task<IActionResult> VisualizarCandidatos(ObjectId id)
+        {
+            List<CandidatoVaga> vagaCandidatos = await _painelAdminService.VisualizarCandidatos(id);
+            return View(vagaCandidatos);
+        }
+
+        [Authorize(Roles = "Recrutador")]
+        [HttpGet]
+        public async Task<IActionResult> VisualizarPerfilCandidatos(ObjectId id)
+        {
+            Candidatos? candidato = await _painelAdminService.VisualizarPerfilCandidato(id);
+            return View(candidato);
+        }
+
+        [Authorize(Roles = "Recrutador")]
+        [HttpGet]
         public async Task<IActionResult> AdicionarVaga()
         {
             return View();

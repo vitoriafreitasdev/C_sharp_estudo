@@ -1,0 +1,47 @@
+﻿@model IEnumerable<contratacoesWeb.Models.CandidatoVaga>
+
+<div class="candidatos-container">
+    <div class="candidatos-header">
+        <h1>Candidatos</h1>
+        <p>Candidatos interessados nesta vaga</p>
+    </div>
+
+    <div class="candidatos-grid">
+        @foreach (CandidatoVaga candidato in Model)
+        {
+            <div class="candidato-card">
+                <h2>@candidato.nome</h2>
+                <div class="candidato-info">
+                    <p>
+                        <strong>Anos de experiência:</strong>
+                        @candidato.anosExperiencia
+                    </p>
+                    <p>
+                        <strong>Formação:</strong>
+                        @candidato.formacaoAcademica
+                    </p>
+
+                    <div class="habilidades-candidato">
+                        <strong>Habilidades:</strong>
+                        <div class="habilidades-lista">
+                            @foreach (string hab in candidato.habilidades)
+                            {
+                                <span class="habilidade">
+                                    @hab
+                                </span>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="candidato-acoes">
+                    <a asp-controller="PainelAdmin"
+                       asp-action="VisualizarPerfilCandidatos"
+                       asp-route-id="@candidato.id"
+                       class="btn-vaga">
+                        Ver Perfil
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,7 +1,6 @@
-﻿using contratacoesWeb.Models;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 
-namespace contratacoesWeb.Dtos
+namespace contratacoesWeb.Models
 {
     public class CandidatoVaga
     {

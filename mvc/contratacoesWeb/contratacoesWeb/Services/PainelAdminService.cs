@@ -106,10 +106,25 @@ namespace contratacoesWeb.Services
             Vagas? vaga = await _context.Vagas.FirstOrDefaultAsync(c => c.id == id);
             return vaga;
         }
-        public Task<List<Candidatos>> VisualizarCandidatos(){
-            throw new NotImplementedException();
+        public async Task<List<CandidatoVaga>> VisualizarCandidatos(ObjectId id){
+            Vagas? vaga = await _context.Vagas.FirstOrDefaultAsync(c => c.id == id);
+
+            if (vaga == null) throw new Exception("Vaga não encontrada.");
+
+            List<CandidatoVaga> vagaCandidatos = vaga.candidatos;
+
+            return vagaCandidatos;
         }
-        
+
+        public async Task<Candidatos?> VisualizarPerfilCandidato(ObjectId id)
+        {
+            Candidatos? candidato = await _context.Candidatos.FirstOrDefaultAsync(c => c.id == id);
+
+            if (candidato == null) return null;
+
+            return candidato;
+        }
+
         public async Task<RetornoObjeto> CriarRole()
         {
             IdentityResult result = await roleManager.CreateAsync(new Roles() { Name = "Candidato" });

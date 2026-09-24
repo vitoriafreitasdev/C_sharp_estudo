@@ -567,13 +567,405 @@ body {
     }
 
 
-        .vaga-resumo span {
-            width: 100%;
-            box-sizing: border-box;
-        }
+    .vaga-resumo span {
+        width: 100%;
+        box-sizing: border-box;
+    }
 
 
     .localizacao {
         grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   LISTA DE CANDIDATOS
+   ========================================= */
+
+.candidatos-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
+
+.candidatos-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+    .candidatos-header h1 {
+        margin: 0 0 8px 0;
+        color: #307473;
+        font-size: 2rem;
+    }
+
+
+    .candidatos-header p {
+        margin: 0;
+        color: #555;
+        font-size: 1rem;
+    }
+
+
+/* =========================================
+   GRID
+   ========================================= */
+
+.candidatos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+/* =========================================
+   CARD DO CANDIDATO
+   ========================================= */
+
+.candidato-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 2px solid #307473;
+    border-radius: 8px;
+    padding: 22px;
+    min-height: 250px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: 0.2s;
+}
+
+
+    .candidato-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 7px 15px rgba(0, 0, 0, 0.12);
+    }
+
+
+    /* =========================================
+   NOME
+   ========================================= */
+
+    .candidato-card h2 {
+        margin: 0 0 20px 0;
+        color: #307473;
+        font-size: 1.3rem;
+        border-bottom: 1px solid #CFD8D7;
+        padding-bottom: 12px;
+    }
+
+
+/* =========================================
+   INFORMAÇÕES
+   ========================================= */
+
+.candidato-info {
+    color: #333;
+}
+
+
+    .candidato-info p {
+        margin: 8px 0;
+    }
+
+
+    .candidato-info strong {
+        color: #307473;
+    }
+
+
+/* =========================================
+   HABILIDADES
+   ========================================= */
+
+.habilidades-candidato {
+    margin-top: 15px;
+}
+
+
+.habilidades-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 10px;
+}
+
+
+.habilidade {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #CFD8D7;
+    color: #307473;
+    border: 1px solid #307473;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   AÇÕES
+   ========================================= */
+
+.candidato-acoes {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+
+    /* Reutilizando o padrão dos outros cards */
+
+    .candidato-acoes .btn-vaga {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #7353BA;
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 600;
+        box-sizing: border-box;
+        transition: 0.2s;
+    }
+
+
+        .candidato-acoes .btn-vaga:hover {
+            background-color: #6041a3;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .candidatos-container {
+        width: 95%;
+        margin: 25px auto;
+    }
+
+
+    .candidatos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================================
+   PERFIL DO CANDIDATO
+   ========================================= */
+
+.perfil-candidato {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
+
+.perfil-header {
+    text-align: center;
+    background-color: #CFD8D7;
+    border: 4px solid #307473;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+
+    .perfil-header h1 {
+        margin: 0;
+        color: #307473;
+        font-size: 2rem;
+    }
+
+
+    .perfil-header p {
+        margin: 8px 0 0 0;
+        color: #555;
+    }
+
+
+/* =========================================
+   SEÇÕES
+   ========================================= */
+
+.perfil-section {
+    background-color: white;
+    border: 2px solid #307473;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+    box-sizing: border-box;
+}
+
+
+    .perfil-section h2 {
+        margin: 0 0 20px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #CFD8D7;
+        color: #307473;
+        font-size: 1.3rem;
+    }
+
+
+/* =========================================
+   GRID DOS DADOS
+   ========================================= */
+
+.dados-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+
+.dado-item {
+    background-color: #CFD8D7;
+    border-left: 4px solid #307473;
+    border-radius: 5px;
+    padding: 12px 15px;
+}
+
+
+    .dado-item strong {
+        display: block;
+        margin-bottom: 5px;
+        color: #307473;
+    }
+
+
+    .dado-item p {
+        margin: 0;
+        color: #333;
+        word-break: break-word;
+    }
+
+
+/* =========================================
+   HABILIDADES
+   ========================================= */
+
+.habilidades-perfil {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+    .habilidades-perfil .habilidade {
+        padding: 7px 13px;
+        background-color: #CFD8D7;
+        color: #307473;
+        border: 1px solid #307473;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+
+/* =========================================
+   LINKS
+   ========================================= */
+
+.links-profissionais {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+.link-profissional {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #7353BA;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+
+    .link-profissional:hover {
+        background-color: #6041a3;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+
+/* =========================================
+   BOTÃO VOLTAR
+   ========================================= */
+
+.perfil-acoes {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+
+    .perfil-acoes .btn-voltar {
+        display: inline-block;
+        padding: 11px 35px;
+        background-color: #7353BA;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: 0.2s;
+    }
+
+
+        .perfil-acoes .btn-voltar:hover {
+            background-color: #6041a3;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .perfil-candidato {
+        width: 95%;
+        margin: 25px auto;
+    }
+
+
+    .perfil-header {
+        padding: 20px;
+    }
+
+
+        .perfil-header h1 {
+            font-size: 1.6rem;
+        }
+
+
+    .dados-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .perfil-section {
+        padding: 20px;
     }
 }

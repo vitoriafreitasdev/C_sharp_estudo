@@ -11,7 +11,8 @@ namespace contratacoesWeb.Services
         public Task<RetornoObjeto> AdicionarVaga(Vagas vaga);
         public Task<List<Vagas>> VisualizarVagas();
         public Task<Vagas?> VisualizarVagaPorId(ObjectId id);
-        public Task<List<Candidatos>> VisualizarCandidatos();
+        public Task<List<CandidatoVaga>> VisualizarCandidatos(ObjectId id);
+        public Task<Candidatos?> VisualizarPerfilCandidato(ObjectId id);
         public Task<RetornoObjeto> CriarRole();
         public Task<RetornoObjeto> AdicionarRecrutador(Recrutadores recrutador);
 
